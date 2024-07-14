@@ -227,7 +227,7 @@ in {
           "tile,title:(.*)(Godot)(.*)$"
            "workspace 1, class:^(firefox)$"
           "workspace 1, class:^(brave)$"
-          "workspace 2, class:^(Alacritty)$" 
+          #"workspace 2, class:^(Alacritty)$" 
           "workspace 2, class:^(kitty)$"
           "workspace 3, class:^(VSCodium)$"
           "workspace 3, class:^(codium-url-handler)$"

@@ -58,6 +58,8 @@
       wezterm
       nodejs_22
       go
+      lunarvim
+      python3
   ];
 
   # Enable networking
