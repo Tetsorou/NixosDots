@@ -51,11 +51,12 @@
       jdk21
       libratbag
       cmake
-      gcc
+      libgcc
       brightnessctl
       hyfetch
       libclang
       wezterm
+      m2libc
       nodejs_22
       go
       lunarvim
