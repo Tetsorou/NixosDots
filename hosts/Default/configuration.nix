@@ -43,7 +43,6 @@
       jetbrains-toolbox
       helix
       exercism
-      sl
       ani-cli
       killall
       sl
@@ -61,6 +60,7 @@
       go
       lunarvim
       python3
+      aseprite
   ];
 
   # Enable networking

@@ -105,7 +105,7 @@
         };
 
         "org/gnome/desktop/peripherals/touchpad" = {
-          disable-while-typing = true;
+          disable-while-typing = false;
           two-finger-scrolling-enabled = true;
         };
 
