@@ -14,6 +14,7 @@
     ../../modules/programs/games
    # ../../modules/desktop/gnome
     ../../modules/hardware/video/nvidia.nix # Enable nvidia proprietary drivers
+    ../../modules/hardware/video/opengl.nix
     # ../../modules/hardware/video/amdgpu.nix # Enable amdgpu drivers
     ./hardware-configuration.nix
   ];
@@ -58,9 +59,11 @@
       m2libc
       nodejs_22
       go
-      lunarvim
+      #lunarvim
       python3
       aseprite
+      chromium
+      audacity
   ];
 
   # Enable networking

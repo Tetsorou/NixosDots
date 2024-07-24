@@ -31,7 +31,7 @@
         adblock
         # fullAppDisplay
         # shuffle # shuffle+ (special characters are sanitized out of ext names)
-        # hidePodcasts
+         hidePodcasts
       ];
     };
   };

@@ -84,17 +84,7 @@ in {
               "privacy.query_stripping.enabled" = lock-true;
               "privacy.query_stripping.enabled.pbmode" = lock-true;
 
-              # Clear on shutdown (Only locks the options to true. Manually enable in firefox settings)
-              "privacy.sanitize.sanitizeOnShutdown" = lock-true;
-              "privacy.clearOnShutdown.cache" = lock-true;
-              "privacy.clearOnShutdown.cookies" = lock-true;
-              "privacy.clearOnShutdown.downloads" = lock-true;
-              "privacy.clearOnShutdown.formdata" = lock-true;
-              "privacy.clearOnShutdown.history" = lock-true;
-              "privacy.clearOnShutdown.offlineApps" = lock-true;
-              "privacy.clearOnShutdown.sessions" = lock-true;
-              "privacy.clearOnShutdown.siteSettings" = lock-true;
-
+          
               # Block more unwanted stuff
               "browser.privatebrowsing.forceMediaMemoryCache" = lock-true;
               "browser.contentblocking.category" = {
@@ -105,42 +95,7 @@ in {
               "browser.search.suggest.enabled.private" = lock-false;
               "privacy.popups.disable_from_plugins" = 3;
               "extensions.pocket.enabled" = lock-false;
-              "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-              "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
-              "browser.newtabpage.activity-stream.feeds.topsites" = lock-false;
-              "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-              "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-              "layout.word_select.eat_space_to_next_word" = lock-false;
-              "browser.shell.checkDefaultBrowser" = lock-false;
-              "signon.rememberSignons" = lock-false;
-              "toolkit.telemetry.unified" = lock-false;
-              "toolkit.telemetry.enabled" = lock-false;
-              "toolkit.telemetry.server" = "data:,";
-              "toolkit.telemetry.archive.enabled" = lock-false;
-              "toolkit.telemetry.coverage.opt-out" = lock-true;
-              "toolkit.coverage.opt-out" = lock-true;
-              "toolkit.coverage.endpoint.base" = "";
-              "experiments.supported" = lock-false;
-              "experiments.enabled" = lock-false;
-              "experiments.manifest.uri" = "";
-              "browser.ping-centre.telemetry" = lock-false;
-              "datareporting.healthreport.uploadEnabled" = lock-false;
-              "datareporting.healthreport.service.enabled" = lock-false;
-              "datareporting.policy.dataSubmissionEnabled" = lock-false;
-              "breakpad.reportURL" = "";
-              "browser.tabs.crashReporting.sendReport" = lock-false;
-              "browser.crashReports.unsubmittedCheck.autoSubmit2" = lock-false;
-              "browser.formfill.enable" = lock-false;
-              "extensions.formautofill.addresses.enabled" = lock-false;
-              "extensions.formautofill.available" = "off";
-              "extensions.formautofill.creditCards.available" = lock-false;
-              "extensions.formautofill.creditCards.enabled" = lock-false;
-              "extensions.formautofill.heuristics.enabled" = lock-false;
-              "app.normandy.enabled" = lock-false;
-              "app.normandy.api_url" = "";
-              "dom.webnotifications.enabled" = lock-false;
-              "dom.webnotifications.serviceworker.enabled" = lock-false;
-
+              
               # General settings
               "ui.key.accelKey" = 17; # Set CTRL as master key
               "browser.newtab.url" = "https://tetsorou.github.io";
@@ -181,8 +136,7 @@ in {
               # "extensions.update.enabled" = false;
               "extensions.webcompat.enable_picture_in_picture_overrides" = true;
               "extensions.webcompat.enable_shims" = true;
-              "extensions.webcompat.perform_injections" = true;
-              "extensions.webcompat.perform_ua_overrides" = true;
+              
             };
           };
         };
@@ -202,175 +156,6 @@ in {
             extensions = with pkgs.nur.repos.rycee.firefox-addons; [
               # profile-switcher
             ];
-            bookmarks = [
-              {
-                name = "Bookmarks Toolbar";
-                toolbar = true;
-                bookmarks = [
-                  {
-                    name = "Youtube";
-                    url = "https://www.youtube.com/";
-                  }
-                  {
-                    name = "Github";
-                    url = "https://github.com/";
-                  }
-                  {
-                    name = "NixOS pkgs";
-                    url = "https://search.nixos.org/packages";
-                  }
-                  {
-                    name = "NixOS Wiki";
-                    url = "https://nixos.wiki";
-                  }
-                  {
-                    name = "NixOS Configs";
-                    url = "https://nixos.wiki/wiki/Configuration_Collection";
-                  }
-                  {
-                    name = "humble Bundle";
-                    url = "https://www.humblebundle.com/bundles";
-                  }
-                  {
-                    name = "The Book Of Shaders";
-                    url = "https://thebookofshaders.com/01/?utm_source=pocket_reader";
-                  }
-                  {
-                    name = "random Shit";
-                    bookmarks = [
-                      {
-                        name = "Sony";
-                        url = "https://electronics.sony.com/audio/headphones/headband/p/wh1000xm5-b";
-                      }
-                      {
-                        name = "analog electronics project";
-                        url = "https://www.circuits-diy.com/intercom-circuit-using-transistors/";
-                      }
-                      {
-                        name = "C image processing";
-                        url = "https://homepages.inf.ed.ac.uk/rbf/BOOKS/PHILLIPS/cips2ed.pdf";
-                      }
-                      {
-                        name = "Interpreter book";
-                        url = "https://interpreterbook.com/";
-                      }
-                      {
-                        name = "Every programmer should know";
-                        url = "https://github.com/mtdvio/every-programmer-should-know";
-                      }
-                    ];
-                  }
-                  {
-                    name = "Search Engines";
-                    bookmarks = [
-                      {
-                        name = "Startpage";
-                        url = "https://www.startpage.com/do/mypage.pl?prfe=358f0310b1c47c53e468bbed228d921438352de61d9ea4fcad92c335685a8e4de5118de1f91f06960587d38d76310c444d27766f935be9bb7dfa8fbc7f0b8207fbcd0a23600e2f957b79e6b3";
-                      }
-                      {
-                        name = "SearX";
-                        url = "https://searx.aicampground.com";
-                      }
-                    ];
-                  }
-                ];
-              }
-            ];
-            search = {
-              force = true;
-              default = "Google";
-              privateDefault = "Startpage";
-              order = [
-                "Startpage"
-                "NixOS Packages"
-                "NixOS Options"
-                "NixOS Wiki"
-                "Home Manager Options"
-                "Searx"
-                "Google"
-              ];
-              engines = {
-                "Startpage" = {
-                  urls = [
-                    {
-                      template = "https://www.startpage.com/sp/search?query={searchTerms}&prfe=dea8b8a2e1126185da987128a196ee5c47cdf324dce146f96b3b9157ab1f9e7166ae05d134c935eccc20f54e46222c8f1bb60faece00557b02e7a4e1fe397bc0f6750fbd3f7f580b241188&abp=-1";
-                    }
-                  ];
-                  icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                  definedAliases = ["@sp"];
-                };
-                "NixOS Packages" = {
-                  urls = [
-                    {
-                      template = "https://search.nixos.org/packages";
-                      params = [
-                        {
-                          name = "type";
-                          value = "packages";
-                        }
-                        {
-                          name = "query";
-                          value = "{searchTerms}";
-                        }
-                      ];
-                    }
-                  ];
-                  icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                  definedAliases = ["@np"];
-                };
-                "NixOS Options" = {
-                  urls = [
-                    {
-                      template = "https://search.nixos.org/options";
-                      params = [
-                        {
-                          name = "type";
-                          value = "packages";
-                        }
-                        {
-                          name = "query";
-                          value = "{searchTerms}";
-                        }
-                      ];
-                    }
-                  ];
-                  icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                  definedAliases = ["@no"];
-                };
-                "NixOS Wiki" = {
-                  urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
-                  iconUpdateURL = "https://nixos.wiki/favicon.png";
-                  updateInterval = 24 * 60 * 60 * 1000; # every day
-                  definedAliases = ["@nw"];
-                };
-                "Home Manager Options" = {
-                  urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
-                  # urls = [
-                  #   {
-                  #     template = "https://mipmip.github.io/home-manager-option-search";
-                  #     params = [
-                  #       {
-                  #         name = "query";
-                  #         value = "{searchTerms}";
-                  #       }
-                  #     ];
-                  #   }
-                  # ];
-                  iconUpdateURL = "https://avatars.githubusercontent.com/u/33221035";
-                  updateInterval = 24 * 60 * 60 * 1000; # Update every day.
-                  definedAliases = ["@hm"];
-                };
-                "Searx" = {
-                  urls = [{template = "https://searx.aicampground.com/?q={searchTerms}";}];
-                  iconUpdateURL = "https://nixos.wiki/favicon.png";
-                  updateInterval = 24 * 60 * 60 * 1000; # every day
-                  definedAliases = ["@sx"];
-                };
-                "Bing".metaData.hidden = true;
-                "Ebay".metaData.hidden = true;
-                "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
-              };
-            };
             extraConfig = ''
               lockPref("extensions.autoDisableScopes", 0);
             '';

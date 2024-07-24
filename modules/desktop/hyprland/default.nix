@@ -226,7 +226,7 @@ in {
           "opacity 0.80 0.80,class:^(alacritty)$"
           "tile,title:(.*)(Godot)(.*)$"
            "workspace 1, class:^(firefox)$"
-          "workspace 1, class:^(brave)$"
+          "workspace 1, class:^(brave-browser)$"
           #"workspace 2, class:^(Alacritty)$" 
           "workspace 2, class:^(kitty)$"
           "workspace 3, class:^(VSCodium)$"
@@ -249,7 +249,7 @@ in {
           #"immediate, class:^(.*)(.exe)$"
 
           "opacity 1.00 1.00,class:^(firefox)$"
-          "opacity 0.90 0.90,class:^(brave)$"
+          "opacity 0.90 0.90,class:^(brave-browser)$"
           "opacity 0.80 0.80,class:^(Steam)$"
           "opacity 0.80 0.80,class:^(steam)$"
           "opacity 0.80 0.80,class:^(steamwebhelper)$"

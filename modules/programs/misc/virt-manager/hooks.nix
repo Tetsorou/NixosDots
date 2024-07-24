@@ -18,7 +18,7 @@
           GUEST_NAME="$1"
           OPERATION="$2"
 
-          if [ "$GUEST_NAME" != "win10" ]; then
+          if [ "$GUEST_NAME" != "win11" ]; then
             exit 0;
           fi
 

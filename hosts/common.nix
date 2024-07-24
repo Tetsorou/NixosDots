@@ -17,7 +17,7 @@ in {
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
     ../modules/programs/browser/firefox
-    ../modules/programs/editor/neovim
+    #../modules/programs/editor/neovim
     ../modules/programs/editor/vscode
     ../modules/programs/cli/starship
     ../modules/programs/cli/tmux
@@ -29,6 +29,8 @@ in {
     ../modules/programs/misc/mpv
     ../modules/programs/misc/spicetify
     ../modules/programs/misc/obs
+    ../modules/programs/misc/cpufreq
+    ../modules/programs/misc/virt-manager
   ];
 
   # Common home-manager options that are shared between all systems.
@@ -48,6 +50,7 @@ in {
       # Terminal
       eza
       fzf
+      
       fd
       git
       gh
@@ -94,7 +97,7 @@ in {
           src = pkgs.fetchFromGitHub {
             owner = "AdisonCavani";
             repo = "distro-grub-themes";
-            rev = "v3.1";
+            rev = "https://github.com/Tetsorou/NixosDots";
             hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
           };
           installPhase = "cp -r customize/nixos $out";
@@ -120,7 +123,7 @@ in {
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.theme = "astronaut";
   services.displayManager.sddm.settings.Theme.CursorTheme = "Bibata-Modern-Classic";
-  services.xserver.displayManager.setupCommands = '' ${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 1920x1080 --rate 165'';
+  services.xserver.displayManager.setupCommands = '' ${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 1920x1080 --rate 165 --output HDMI-A-1 --rate 165 --mode 1920x1080'';
   # Setup auth agent and keyring
   services.gnome.gnome-keyring.enable = true;
   systemd = {
