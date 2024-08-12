@@ -85,14 +85,20 @@ in {
         env = [
           # "XCURSOR_SIZE,16"
 
-          # WLR
-          "WLR_NO_HARDWARE_CURSORS,1"
-          "WLR_RENDERER_ALLOW_SOFTWARE,1"
+          # # WLR
+          # "WLR_NO_HARDWARE_CURSORS,1"
+          # "WLR_RENDERER_ALLOW_SOFTWARE,1"
 
           # XDG Specifications
           "XDG_CURRENT_DESKTOP,Hyprland"
           "XDG_SESSION_DESKTOP,Hyprland"
           "XDG_SESSION_TYPE,wayland"
+
+
+          "AQ_DRM_DEVICES,/dev/dri/card1"
+
+
+
 
           # Use wayland by default
           "GDK_BACKEND=wayland,x11,*"
@@ -122,7 +128,7 @@ in {
           "waybar &"
           "swaync &"
           # "dunst"
-          # "blueman-applet"
+           "blueman-applet"
           "nm-applet --indicator"
           "wl-clipboard-history -t"
           "wl-paste --type text --watch cliphist store" # clipboard store text data
@@ -453,13 +459,13 @@ in {
               "$mainMod SHIFT, ${toString (x + 1)}, split-movetoworkspace, ${toString (x + 1)}"
               "$mainMod ALT, ${toString (x  + 1)}, split-movetoworkspacesilent, ${toString (x + 1)}"
             ])
-            9))
-          ++ (builtins.concatLists (builtins.genList (x: [
+            9));
+  #        ++ (builtins.concatLists (builtins.genList (x: [
               #"$mainMod CTRL, ${toString (x + 10)}, split-workspace, ${toString (x + 10)}"
               #"$mainMod CTRL SHIFT, ${toString (x + 10)}, split-movetoworkspace, ${toString (x + 10)}"
               #"$mainMod CTRL ALT, ${toString (x  + 10)}, split-movetoworkspacesilent, ${toString (x + 10)}"
-            ])
-            9));
+ #           ])
+#            9));
         bindm = [
           # Move/Resize windows with mainMod  LMB/RMB and dragging
           "$mainMod, mouse:272, movewindow"
@@ -493,8 +499,8 @@ in {
       #  monitor=,1920x1080@144,auto,1
 	     # monitor=eDP-1,1920x1080@144, 1920x0, 1
         monitor=desc: JVC LT-MK24220,1920x1080@144,0x0,1
-        monitor=eDP-1,1920x1080@144, 1920x0, 1
-        #monitor=,1920x1080@144,auto,1
+        monitor=desc: LG Display 0x06E2,1920x1080@144, 1920x0, 1
+       # monitor=,1920x1080@144,auto,1
        # monitor = HDMI-A-1, preferred, 0x0, 1
         #monitor = DP-1, 2560x1600@59.9, 2560x0, 1
 

@@ -11,7 +11,7 @@ in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ../modules/hardware/video/opengl.nix
-    ../modules/hardware/drives # Will still boot if these these drives are not found
+    #../modules/hardware/drives # Will still boot if these these drives are not found
     
     ../modules/programs/terminal/${terminal}
     ../modules/programs/shell/bash
@@ -217,7 +217,12 @@ in {
     brave
     # Development
     devbox # faster nix-shells
+    xorg.xev
+    solaar
     shellify # faster nix-shells
+    frescobaldi
+    acpi
+    wlroots
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -265,7 +270,7 @@ in {
       # Garbage Collection
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 3d";
+      options = "--delete-older-than 20d";
     };
     optimise.automatic = true;
     package = pkgs.nixFlakes;

@@ -14,7 +14,7 @@
     ../../modules/programs/games
    # ../../modules/desktop/gnome
     ../../modules/hardware/video/nvidia.nix # Enable nvidia proprietary drivers
-    ../../modules/hardware/video/opengl.nix
+   # ../../modules/hardware/video/opengl.nix
     # ../../modules/hardware/video/amdgpu.nix # Enable amdgpu drivers
     ./hardware-configuration.nix
   ];
@@ -51,7 +51,7 @@
       jdk21
       libratbag
       cmake
-      libgcc
+      gcc
       brightnessctl
       hyfetch
       libclang

@@ -8,6 +8,8 @@
       vulkan-loader
       vulkan-validation-layers
       vulkan-extension-layer
+       vaapiVdpau
+        libvdpau-va-gl
     ];
   };
 }
