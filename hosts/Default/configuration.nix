@@ -13,8 +13,8 @@
     ../../modules/desktop/hyprland # Enable hyprland window manager
     ../../modules/programs/games
    # ../../modules/desktop/gnome
-    ../../modules/hardware/video/nvidia.nix # Enable nvidia proprietary drivers
-   # ../../modules/hardware/video/opengl.nix
+#    ../../modules/hardware/video/nvidia.nix # Enable nvidia proprietary drivers
+    ../../modules/hardware/video/opengl.nix
     # ../../modules/hardware/video/amdgpu.nix # Enable amdgpu drivers
     ./hardware-configuration.nix
   ];
@@ -64,6 +64,9 @@
       aseprite
       chromium
       audacity
+      #wpsoffice
+      #libreoffice-qt6
+      libreoffice-qt
   ];
 
   # Enable networking

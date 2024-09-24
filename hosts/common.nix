@@ -223,6 +223,13 @@ in {
     frescobaldi
     acpi
     wlroots
+    killall
+    ventoy
+    strawberry
+    wl-clipboard
+    gleam
+    erlang
+    rebar3
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

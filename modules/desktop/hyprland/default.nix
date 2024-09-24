@@ -116,11 +116,12 @@ in {
         ];
         exec-once = [
           "pamixer --set-volume 40"
+           
         #  "[workspace 1 silent] firefox"
           #"[workspace 2 silent] alacritty"
           #"[workspace 5 silent] spotify"
           #"[workspace special silent] firefox --new-instance -P private"
-          #"[workspace special silent] alacritty"
+          "[workspace special silent] alacritty"
           #"[workspace 8 silent] alacritty -e cava"
           #"[workspace 9 silent] alacritty -e cava"
 
@@ -146,7 +147,8 @@ in {
 
           follow_mouse = 1;
 
-          touchpad = {natural_scroll = false;};
+          touchpad = {natural_scroll = false;
+          disable_while_typing = false;};
 
           sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
           force_no_accel = true;
@@ -245,6 +247,7 @@ in {
           "workspace 5, class:^(Spotify)$"
           "workspace 5, title:(.*)(Spotify)(.*)$"
           "workspace 7, class:^(steam)$"
+          
           # "workspace 10, class:^(factorio)$"
 
           # Allow screen tearing for reduced input latency on some games.
@@ -335,16 +338,16 @@ in {
 
             # Window/Session actions
             "$mainMod, Q, exec, $hyprScriptsDir/dontkillsteam.sh" # killactive, kill the window on focus
-            "ALT, F4, exec, $hyprScriptsDir/dontkillsteam.sh" # killactive, kill the window on focus
+#"ALT, F4, exec, $hyprScriptsDir/dontkillsteam.sh" # killactive, kill the window on focus
             "$mainMod, delete, exit" # kill hyperland session
             "$mainMod, W, togglefloating" # toggle the window on focus to float
             "$mainMod SHIFT, G, togglegroup" # toggle the window on focus to float
             "ALT, return, fullscreen" # toggle the window on focus to fullscreen
             #"$mainMod ALT, L, exec, swaylock" # lock screen
             "$mainMod, backspace, exec, wlogout -b 4" # logout menu
-            "$CONTROL, ESCAPE, exec, killall waybar || waybar" # toggle waybar
+            "$CONTROL, ESCAPE, exec, killall .waybar-wrapped || waybar" # toggle waybar
 
-            "$mainMod, Return, exec, $term"
+#            "$mainMod, Return, exec, $term"
             "$mainMod, T, exec, $term"
             "$mainMod, E, exec, $file"
             "$mainMod, C, exec, $editor"
@@ -355,12 +358,12 @@ in {
             "$mainMod, Z, exec, pkill -x rofi || $hyprScriptsDir/emoji.sh" # launch emoji picker
             "$mainMod, tab, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh w" # switch between desktop applications
             # "$mainMod, R, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh f" # browse system files
-            "$mainMod SHIFT, W, exec, $hyprScriptsDir/WallpaperSelect.sh" # Select wallpaper to apply
+            #"$mainMod SHIFT, W, exec, $hyprScriptsDir/WallpaperSelect.sh" # Select wallpaper to apply
            #"$mainMod ALT, K, exec, $hyprScriptsDir/keyboardswitch.sh" # change keyboard layout
             "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
             "$mainMod, G, exec, $hyprScriptsDir/gamelauncher.sh" # game launcher
             "$mainMod ALT, G, exec, $hyprScriptsDir/gamemode.sh" # disable hypr effects for gamemode
-            #"$mainMod, V, exec, $hyprScriptsDir/ClipManager.sh" # Clipboard Manager
+            "$mainMod, V, exec, $hyprScriptsDir/ClipManager.sh" # Clipboard Manager
             "$mainMod SHIFT, M, exec, $hyprScriptsDir/rofimusic.sh" # online music
 
             # Waybar
@@ -453,6 +456,8 @@ in {
             # Special workspaces (scratchpad)
             "$mainMod ALT, S, movetoworkspacesilent, special"
             "$mainMod, S, togglespecialworkspace,"
+
+          #  "$mainMod, Y, monitor = HDMI-A-1, highres,0x-1080,1, transform, 90"
           ]
           ++ (builtins.concatLists (builtins.genList (x: [
               "$mainMod, ${toString (x + 1)}, split-workspace, ${toString (x +1)}"
@@ -498,8 +503,9 @@ in {
         # Monitor
       #  monitor=,1920x1080@144,auto,1
 	     # monitor=eDP-1,1920x1080@144, 1920x0, 1
-        monitor=desc: JVC LT-MK24220,1920x1080@144,0x0,1
-        monitor=desc: LG Display 0x06E2,1920x1080@144, 1920x0, 1
+       #monitor=HDMI-A-1,highres,1920x0,0.75,transform,1
+        monitor=HDMI-A-1,highres,0x-1080,1
+        monitor=eDP-1,1920x1080@165, 0x0, 1
        # monitor=,1920x1080@144,auto,1
        # monitor = HDMI-A-1, preferred, 0x0, 1
         #monitor = DP-1, 2560x1600@59.9, 2560x0, 1

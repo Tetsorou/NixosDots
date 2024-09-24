@@ -76,7 +76,7 @@
         "gopls" = {"ui.semanticTokens" = true;};
 
         "editor.codeActionsOnSave" = {"source.organizeImports" = "explicit";};
-        "editor.inlineSuggest.enabled" = true;
+        "editor.inlineSuggest.enabled" = false;
         "editor.formatOnSave" = true;
         # "editor.formatOnType" = true;
         "editor.formatOnPaste" = true;
