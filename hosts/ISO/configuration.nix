@@ -131,7 +131,7 @@
   # Enable sddm login manager
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.theme = "astronaut";
+  services.xserver.displayManager.sddm.theme = "sugar-dark";
   services.xserver.displayManager.sddm.settings.Theme.CursorTheme = "Bibata-Modern-Classic";
 
   # Setup auth agent and keyring

@@ -121,7 +121,7 @@ in {
 
   # Enable sddm login manager
   services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.theme = "astronaut";
+  services.displayManager.sddm.theme = "tokyo-night";
   services.displayManager.sddm.settings.Theme.CursorTheme = "Bibata-Modern-Classic";
   services.xserver.displayManager.setupCommands = '' ${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 1920x1080 --rate 165 --output HDMI-A-1 --rate 165 --mode 1920x1080'';
   # Setup auth agent and keyring
@@ -203,12 +203,12 @@ in {
       winetricks
       wineWowPackages.full
     # System
-    # sddm-themes.sugar-dark
+     sddm-themes.sugar-dark
    sddm-themes.astronaut
    killall
-   #  sddm-themes.tokyo-night
+     sddm-themes.tokyo-night
     # adwaita-qt
-    # bibata-cursors
+     bibata-cursors
     libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
     # polkit
     # libsForQt5.polkit-kde-agent
