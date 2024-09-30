@@ -5,7 +5,7 @@
 }: {
   home-manager.users.${username} = _: {
     services.dunst = {
-      enable = true;
+      enable = false;
       iconTheme = {
         name = "Papirus-Dark";
         package = pkgs.papirus-icon-theme;
