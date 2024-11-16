@@ -49,7 +49,7 @@
         };
 
         font = {
-          size = 11.0;
+          size = 16.0;
           normal = {
             family = "JetBrainsMono Nerd Font";
             style = "Regular";
@@ -73,7 +73,7 @@
         window = {
           decorations = "full";
           dynamic_padding = false;
-          opacity = 0.6;
+          opacity = 0.55;
           startup_mode = "Maximized";
 
           padding.x = 0;
@@ -94,31 +94,31 @@
             key = "L";
             mods = "Control|Alt";
           } */
-          {
-            chars = "cd $(${pkgs.fd}/bin/fd . /mnt/seagate /mnt/seagate/dev/ /run /run/current-system ~/.local/ ~/ --max-depth 2 | fzf)\r";
-            key = "F";
-            mods = "Control";
-          }
-          {
-            chars = "tmux-sessionizer\r";
-            key = "T";
-            mods = "Control";
-          }
-          {
-            action = "Paste";
-            key = "Y";
-            mods = "Control";
-          }
-          {
-            action = "Copy";
-            key = "W";
-            mods = "Alt";
-          }
-          {
-            action = "SpawnNewInstance";
-            key = "Return";
-            mods = "Super|Shift";
-          }
+          # {
+            # chars = "cd $(${pkgs.fd}/bin/fd . /mnt/seagate /mnt/seagate/dev/ /run /run/current-system ~/.local/ ~/ --max-depth 2 | fzf)\r";
+            # key = "F";
+          #  mods = "Control";
+          # }
+          # {
+            # chars = "tmux-sessionizer\r";
+            # key = "T";
+            # mods = "Control";
+          # }
+          # {
+            # action = "Paste";
+            # key = "Y";
+            # mods = "Control";
+          # }
+          # {
+            # action = "Copy";
+            # key = "W";
+            # mods = "Alt";
+          # }
+          #  {
+            # action = "SpawnNewInstance";
+            # key = "Return";
+            # mods = "Super|Shift";
+          # }
         ];
 
         selection = {

@@ -116,7 +116,7 @@ in {
         ];
         exec-once = [
           "pamixer --set-volume 40"
-           
+           "gsettings set org.gnome.desktop.wm.preferences button-layout :"
         #  "[workspace 1 silent] firefox"
           #"[workspace 2 silent] alacritty"
           #"[workspace 5 silent] spotify"
@@ -140,8 +140,8 @@ in {
           #"systemctl start --user polkit-kde-authentication-agent-1"
         ];
         input = {
-          kb_layout = "us";
-         # kb_variant = "qwerty";
+          kb_layout = "us,";
+         kb_variant = "qwerty";
           repeat_delay = 212;
           repeat_rate = 30;
 
@@ -155,7 +155,7 @@ in {
         };
         general = {
           gaps_in = 4;
-          gaps_out = 9;
+          gaps_out = 4;
           border_size = 2;
           "col.active_border" = "rgba(ca9ee6ff) rgba(f2d5cfff) 45deg";
           "col.inactive_border" = "rgba(b4befecc) rgba(6c7086cc) 45deg";
@@ -233,7 +233,7 @@ in {
           #"noanim, class:^(Rofi)$
           "opacity 0.80 0.80,class:^(alacritty)$"
           "tile,title:(.*)(Godot)(.*)$"
-           "workspace 1, class:^(firefox)$"
+          # "workspace 1, class:^(firefox)$"
           "workspace 1, class:^(brave-browser)$"
           #"workspace 2, class:^(Alacritty)$" 
           "workspace 2, class:^(kitty)$"
@@ -277,7 +277,7 @@ in {
           "opacity 0.90 0.90,class:^(com.github.rafostar.Clapper)$" #Clapper-Gtk
           "opacity 0.80 0.80,class:^(com.github.tchx84.Flatseal)$" #Flatseal-Gtk
           "opacity 0.80 0.80,class:^(hu.kramo.Cartridges)$" #Cartridges-Gtk
-          "opacity 0.80 0.80,class:^(com.obsproject.Studio)$" #Obs-Qt
+          "opacity 0.99 0.99,class:^(com.obsproject.Studio)$" #Obs-Qt
           "opacity 0.80 0.80,class:^(gnome-boxes)$" #Boxes-Gtk
           "opacity 0.80 0.80,class:^(discord)$" #Discord-Electron
           "opacity 0.80 0.80,class:^(WebCord)$" #WebCord-Electron
@@ -330,8 +330,10 @@ in {
         bind =
           [
             # Night Mode (lower value means warmer temp)
-            "$mainMod, F9, exec, wlsunset -t 3000 -T 3900"
-            "$mainMod, F10, exec, pkill wlsunset"
+            #"$mainMod, F9, exec, wlsunset -t 3000 -T 3900"
+            #"$mainMod, F10, exec, pkill wlsunset"
+            "$mainMod,F9,exec,hyprctl keyword monitor HDMI-A-1,highres,0x-1080,1,transform,0 && hyprctl keyword monitor eDP-1,1920x1080@165,0x0,1"
+          #  "$mainMod,F10,exec,hyprctl keyword monitor HDMI-A-1,highres,2020x0,1,transform,1 "
 
             # Overview plugin
             # "$mainMod, tab, overview:toggle"
@@ -359,7 +361,7 @@ in {
             "$mainMod, tab, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh w" # switch between desktop applications
             # "$mainMod, R, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh f" # browse system files
             #"$mainMod SHIFT, W, exec, $hyprScriptsDir/WallpaperSelect.sh" # Select wallpaper to apply
-           #"$mainMod ALT, K, exec, $hyprScriptsDir/keyboardswitch.sh" # change keyboard layout
+           "$mainMod ALT, K, exec, $hyprScriptsDir/keyboardswitch.sh" # change keyboard layout
             "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
             "$mainMod, G, exec, $hyprScriptsDir/gamelauncher.sh" # game launcher
             "$mainMod ALT, G, exec, $hyprScriptsDir/gamemode.sh" # disable hypr effects for gamemode

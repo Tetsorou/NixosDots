@@ -110,7 +110,7 @@ in {
               "dom.security.https_only_mode" = lock-true;
               "dom.security.https_only_mode_ever_enabled" = lock-true;
               "identity.fxaccounts.enabled" = lock-false;
-              "app.update.auto" = false;
+              "app.update.auto" = true;
               "browser.startup.homepage" = "https://tetsorou.github.io";
               "browser.bookmarks.restore_default_bookmarks" = false;
               "browser.ctrlTab.recentlyUsedOrder" = false;

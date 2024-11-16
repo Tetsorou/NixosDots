@@ -12,7 +12,7 @@ in {
     inputs.home-manager.nixosModules.home-manager
     ../modules/hardware/video/opengl.nix
     #../modules/hardware/drives # Will still boot if these these drives are not found
-    
+    #../modules/hardware/video/nvidia.nix
     ../modules/programs/terminal/${terminal}
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
@@ -39,7 +39,7 @@ in {
     home.username = "tetsorou";
     home.homeDirectory = "/home/tetsorou";
 
-    home.stateVersion = "24.05"; # Please read the comment before changing.
+    home.stateVersion = "24.11"; # Please read the comment before changing.
 
     # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
     home.packages = with pkgs; [
@@ -195,10 +195,10 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Scripts
-    scripts.tmux-sessionizer
+    #scripts.tmux-sessionizer
     scripts.collect-garbage
     scripts.driverinfo
-    scripts.underwatt
+   # scripts.underwatt
       quickemu
       winetricks
       wineWowPackages.full
@@ -230,7 +230,11 @@ in {
     gleam
     erlang
     rebar3
-  ];
+    jigmo
+    davinci-resolve
+    anki
+    ghidra
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

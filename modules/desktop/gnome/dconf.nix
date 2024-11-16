@@ -153,7 +153,7 @@
 
         "org/gnome/desktop/wm/preferences" = {
           auto-raise = false;
-          button-layout = "close,minimize,maximize:appmenu";
+          button-layout = ":";
           focus-mode = "sloppy";
           mouse-button-modifier = "<Super>";
           num-workspaces = 10;
