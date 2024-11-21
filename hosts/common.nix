@@ -39,7 +39,7 @@ in {
     home.username = "tetsorou";
     home.homeDirectory = "/home/tetsorou";
 
-    home.stateVersion = "24.11"; # Please read the comment before changing.
+    home.stateVersion = "24.05"; # Please read the comment before changing.
 
     # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
     home.packages = with pkgs; [
