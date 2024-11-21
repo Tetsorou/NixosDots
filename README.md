@@ -23,7 +23,7 @@
 > If you want to change this then edit the imports in ./hosts/Default/configuration.nix.</p>
 ## Using the install script
 ```bash
-nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/Sly-Harvey/NixOS.git ~/NixOS
+nix run --experimental-features "nix-command flakes" nixpkgs#git clone https://github.com/Tetsorou/NixosDots.git ~/NixOS
 ```
 ```bash
 cd ~/NixOS
