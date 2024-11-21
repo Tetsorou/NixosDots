@@ -99,7 +99,7 @@
         #keyboard-state,
         #memory,
         #mode,
-        #mpris,
+        #waybar-mpris,
         #network,
         #pulseaudio,
         #pulseaudio-slider,
@@ -278,7 +278,7 @@
         	color: @pink;
         }
 
-        #mpris {
+        #waybar-mpris {
         	color: @pink;
         }
 
@@ -321,7 +321,7 @@
           color: @mauve;
         }
 
-        #custom-waybar-mpris {
+        #custom-waybar-waybar-mpris {
           color:@lavender;
         }
 
@@ -388,10 +388,11 @@
           "margin-left" = 8;
           "margin-right" = 8;
 
-          # "modules-left" = ["hyprland/workspaces" "mpris" "custom/r_end"];
+          #"modules-left" = ["hyprland/workspaces"  "custom/r_end"];
+          # "modules-left" = ["hyprland/workspaces" "custom/waybar-mpris" "custom/r_end"];
           "modules-left" = ["hyprland/workspaces" "cava" "custom/r_end"];
-          "modules-center" = ["custom/l_end" "idle_inhibitor" "clock" "custom/r_end"];
-          "modules-right" = ["custom/l_end" "custom/gpuinfo" "cpu" "memory" "keyboard-state" "network" "bluetooth" "pulseaudio" "custom/r_end" "hyprland/language" "custom/r_end" "tray" "battery" "custom/l_end" "custom/power" "custom/padd"];
+          "modules-center" = ["custom/l_end" "tray" "clock" "custom/r_end"];
+          "modules-right" = ["custom/l_end"  "cpu" "memory" "network" "bluetooth" "pulseaudio" "custom/r_end"  "battery" "custom/l_end" "custom/padd"];
           #"modules-right" = ["custom/l_end" "temperature" "cpu" "memory" "keyboard-state" "network" "bluetooth" "pulseaudio" "custom/r_end" "hyprland/language" "custom/r_end" "tray" "battery" "custom/l_end" "custom/power" "custom/r_end" "custom/padd" ];
           "custom/colour-temperature" = {
             "format" = "{} ";
@@ -443,11 +444,13 @@
               "kdeconnect" = "";
               "mopidy" = "";
             };
+         
+
             "status-icons" = {
               "paused" = "⏸";
               "playing" = "";
             };
-            "ignored-players" = ["firefox" "chromium"];
+            "ignored-players" = [ "chromium"];
             "max-length" = 30;
           };
           "temperature" = {
@@ -459,6 +462,32 @@
             "format-icons" = ["" "" ""];
             "interval" = 2;
           };
+            "custom/waybar-mpris" = {
+              "return-type" = "json";
+              "exec" = "waybar-mpris --position --autofocus";
+              "on-click" = "waybar-mpris --send toggle";
+         #This option will switch between players on right click.
+              "on-click-right" = "waybar-mpris --send player-next";
+              "escape" = true;
+              "format" = "{player_icon} {title} - {artist}";
+              "format-paused" = "{status_icon} <i>{title} - {artist}</i>";
+              "player-icons" = {
+                "default" = "▶";
+                "spotify" = "";
+                "mpv" = "󰐹";
+                "vlc" = "󰕼";
+                "firefox" = "";
+                "chromium" = "";
+                "kdeconnect" = "";
+                "mopidy" = "";
+                 };
+                "status-icons" = {
+                  "paused" = "⏸";
+                  "playing" = "";
+                };
+                "ignored-players" = [ "chromium"];
+                "max-length" = 30;
+            };
           "hyprland/language" = {
             "format" = "{short} {variant}";
             "on-click" = "~/.config/hypr/scripts/keyboardswitch.sh";
@@ -469,7 +498,7 @@
             "active-only" = false;
             "on-click" = "activate";
             "persistent-workspaces" = {
-              "*" = [1 2 3 4 5 6 7 8 9 10];
+              "*" = [1 2 3 4 5 6 7 8 9 ];
             };
           };
 
@@ -500,7 +529,7 @@
 
           "clock" = {
             "format" = "{:%R 󰃭 %d·%m·%y}";
-            "format-alt" = "{:%I:%M %p}";
+            "format-alt" = "{:%I:%M:%S %p}";
             "tooltip-format" = "<tt>{calendar}</tt>";
             "calendar" = {
               "mode" = "month";
@@ -594,7 +623,7 @@
           };
 
           "tray" = {
-            "icon-size" = 12;
+            "icon-size" = 14;
             "spacing" = 5;
           };
 

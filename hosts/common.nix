@@ -70,7 +70,7 @@ in {
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
   };
-
+  
   # Filesystems support
   boot.supportedFilesystems = ["ntfs" "exfat" "ext4" "fat32" "btrfs"];
   services.devmon.enable = true;
@@ -234,6 +234,9 @@ in {
     davinci-resolve
     anki
     ghidra
+    waybar-mpris
+    xorg.xhost
+    firefox-devedition
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -254,7 +257,7 @@ in {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
+ 
   nix = {
     # Nix Package Manager Settings
     settings = {
@@ -286,4 +289,5 @@ in {
     optimise.automatic = true;
     package = pkgs.nixFlakes;
   };
+ 
 }

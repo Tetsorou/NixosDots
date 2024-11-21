@@ -80,7 +80,7 @@ in {
         "$term" = "${pkgs.${terminal}}/bin/${terminal}";
         "$editor" = "code --disable-gpu";
         "$file" = "$term -e lf";
-        "$browser" = "firefox";
+        "$browser" = "firefox-devedition";
 
         env = [
           # "XCURSOR_SIZE,16"
@@ -154,8 +154,8 @@ in {
           force_no_accel = true;
         };
         general = {
-          gaps_in = 4;
-          gaps_out = 4;
+          gaps_in = 2;
+          gaps_out = 2;
           border_size = 2;
           "col.active_border" = "rgba(ca9ee6ff) rgba(f2d5cfff) 45deg";
           "col.inactive_border" = "rgba(b4befecc) rgba(6c7086cc) 45deg";
@@ -203,7 +203,7 @@ in {
             "border, 1, 10, default"
             "fade, 1, 2.5, md3_decel"
             # "workspaces, 1, 3.5, md3_decel, slide"
-            "workspaces, 1, 3.5, easeOutExpo, slide"
+            "workspaces, 1, 1.5, easeOutExpo, slide"
             # "workspaces, 1, 7, fluent_decel, slidefade 15%"
             # "specialWorkspace, 1, 3, md3_decel, slidefadevert 15%"
             "specialWorkspace, 1, 3, md3_decel, slidevert"
@@ -257,7 +257,7 @@ in {
           #"immediate, class:^(steam_app_2)$"
           #"immediate, class:^(.*)(.exe)$"
 
-          "opacity 1.00 1.00,class:^(firefox)$"
+          "opacity 1.00 1.00,class:^(firefox-devedition)$"
           "opacity 0.90 0.90,class:^(brave-browser)$"
           "opacity 0.80 0.80,class:^(Steam)$"
           "opacity 0.80 0.80,class:^(steam)$"
@@ -353,7 +353,7 @@ in {
             "$mainMod, T, exec, $term"
             "$mainMod, E, exec, $file"
             "$mainMod, C, exec, $editor"
-            "$mainMod, F, exec, $browser"
+            "$mainMod, F, exec, firefox-devedition --profile ~/.mozilla/firefox"
             "$CONTROL ALT, DELETE, exec, $term -e '${pkgs.btop}/bin/btop2'"
 
             "$mainMod, A, exec, pkill -x rofi || $launcher" # launch desktop applications

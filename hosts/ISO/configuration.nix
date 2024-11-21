@@ -41,7 +41,7 @@
     home.username = username;
     home.homeDirectory = "/home/${username}";
 
-    home.stateVersion = "23.11"; # Please read the comment before changing.
+    home.stateVersion = "24.11"; # Please read the comment before changing.
 
     home.packages = with pkgs; [
       calamares-nixos
