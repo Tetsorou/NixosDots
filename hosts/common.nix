@@ -284,6 +284,7 @@ in {
 
     # Development
     arduino-ide
+    
     #brave
     
     #solaar
@@ -308,6 +309,7 @@ in {
     exercism
     #ani-cli
     sl
+    gnome-keyring
     #piper
     jdk21
     libratbag
