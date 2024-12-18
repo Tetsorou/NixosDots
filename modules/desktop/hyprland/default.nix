@@ -65,7 +65,7 @@ in {
       plugins = [
         # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
         # inputs.hyprland-plugins.packages.${pkgs.system}.hyprwinwrap
-        inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+        split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
       ];
       systemd = {
         enable = true;
@@ -141,7 +141,7 @@ in {
         ];
         input = {
           kb_layout = "us,";
-         kb_variant = "qwerty";
+         kb_variant = "";
           repeat_delay = 212;
           repeat_rate = 30;
 
