@@ -3,16 +3,9 @@
   lib,
   ...
 }: {
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-
-    extraPackages = with pkgs; [
-      vulkan-loader
-      vulkan-validation-layers
-      vulkan-extension-layer
-    ];
+    enable32Bit = true;
   };
   environment.systemPackages = with pkgs; [
     steam-run

@@ -1,99 +1,253 @@
 {
   description = "A simple flake for an atomic system";
-  
- # imports = [
-#  ./flakes
- # ];
-
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nur.url = "github:nix-community/NUR";
-    nixvim.url = "github:Sly-Harvey/nixvim";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    /* Hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    }; */
+    nixvim = {
+      url = "github:Sly-Harvey/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #hyprland.url = "github:hyprwm/Hyprland";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+   hyprland.url = "github:hyprwm/Hyprland";
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
     };
-    spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    quickemu = {
-      url = "https://flakehub.com/f/quickemu-project/quickemu/4.9.6.tar.gz";
-    };
   };
 
-  outputs = {self, nixpkgs, home-manager, quickemu, split-monitor-workspaces,...} @ inputs: let
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-stable,
+    split-monitor-workspaces,
+    ...
+  } @ inputs: let
+
     # User configuration
-    username = "tetsorou"; # WARNING REPLACE THIS WITH YOUR USERNAME IF YOU ARE MANUALLY INSTALLING WITHOUT THE SCRIPT
-    terminal = "alacritty"; # or kitty
+    username = "tetsorou"; # WARNING REPLACE THIS WITH YOUR USERNAME IF MANUALLY INSTALLING
+    terminal = "alacritty"; # alacritty or kitty
+    wallpaper = "cyberpunk.png"; # see modules/themes/wallpapers
 
     # System configuration
+    hostname = "nixos"; # CHOOSE A HOSTNAME HERE (default is fine)
     locale = "en_US.UTF-8"; # REPLACE THIS WITH YOUR LOCALE
     timezone = "America/Managua"; # REPLACE THIS WITH YOUR TIMEZONE
-    hostname = "tetsorou"; # CHOOSE A HOSTNAME HERE (default is fine)
+    kbdLayout = "us"; # REPLACE THIS WITH YOUR KEYBOARD LAYOUT
 
     arguments = {
       inherit
-      username
-      terminal
-      system
-      locale
-      timezone
-      hostname;
+        pkgs-stable
+        username
+        terminal
+        wallpaper
+        system
+        locale
+        timezone
+        hostname
+        kbdLayout
+        ;
     };
 
     system = "x86_64-linux"; # most users will be on 64 bit pcs (unless yours is ancient)
-    
     lib = nixpkgs.lib;
+    pkgs-stable = _final: _prev: {
+      stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+        config.nvidia.acceptLicense = true;
+      };
+    };
   in {
     nixosConfigurations = {
       Default = lib.nixosSystem {
         inherit system;
-        specialArgs = (arguments //
-        { inherit inputs; }) // inputs; # Expose all inputs and arguments
+        specialArgs =
+          (arguments
+            // {inherit inputs;})
+          // inputs; # Expose all inputs and arguments
         modules = [
           ./hosts/Default/configuration.nix
         ];
       };
-      Desktop = lib.nixosSystem {
-        inherit system;
-        specialArgs = (arguments //
-        { inherit inputs; hostname = "NixOS-Desktop"; }) // inputs; # Expose all inputs and arguments
-        modules = [
-          ./hosts/Desktop/configuration.nix
-        ];
+    };
+  }
+  // { # To use a template do: nix flake init -t $templates#TEMPLATE_NAME"
+    templates = rec {
+      default = ./dev-templates/empty;
+      bun = {
+        path = ./dev-templates/bun;
+        description = "Bun development environment";
       };
-      Laptop = lib.nixosSystem {
-        inherit system;
-        specialArgs = (arguments //
-        { inherit inputs; hostname = "NixOS-Laptop"; }) // inputs; # Expose all inputs and arguments
-        modules = [
-          ./hosts/Laptop/configuration.nix
-        ];
+      c-cpp = {
+        path = ./dev-templates/c-cpp;
+        description = "C/C++ development environment";
       };
-      Iso = lib.nixosSystem { # Build the iso with the build-iso command. (cpu intensive)
-        inherit system;
-        specialArgs = (arguments //
-        { inherit inputs; hostname = "NixOS-Portable"; }) // inputs; # Expose all inputs and arguments
-        modules = [
-          ./hosts/ISO/configuration.nix
-        ];
+      clojure = {
+        path = ./dev-templates/clojure;
+        description = "Clojure development environment";
       };
+      csharp = {
+        path = ./dev-templates/csharp;
+        description = "C# development environment";
+      };
+      cue = {
+        path = ./dev-templates/cue;
+        description = "Cue development environment";
+      };
+      dhall = {
+        path = ./dev-templates/dhall;
+        description = "Dhall development environment";
+      };
+      elixir = {
+        path = ./dev-templates/elixir;
+        description = "Elixir development environment";
+      };
+      elm = {
+        path = ./dev-templates/elm;
+        description = "Elm development environment";
+      };
+      empty = {
+        path = ./dev-templates/empty;
+        description = "Empty dev template that you can customize at will";
+      };
+      gleam = {
+        path = ./dev-templates/gleam;
+        description = "Gleam development environment";
+      };
+      go = {
+        path = ./dev-templates/go;
+        description = "Go (Golang) development environment";
+      };
+      hashi = {
+        path = ./dev-templates/hashi;
+        description = "HashiCorp DevOps tools development environment";
+      };
+      haskell = {
+        path = ./dev-templates/haskell;
+        description = "Haskell development environment";
+      };
+      java = {
+        path = ./dev-templates/java;
+        description = "Java development environment";
+      };
+      jupyter = {
+        path = ./dev-templates/jupyter;
+        description = "Jupyter development environment";
+      };
+      kotlin = {
+        path = ./dev-templates/kotlin;
+        description = "Kotlin development environment";
+      };
+      latex = {
+        path = ./dev-templates/latex;
+        description = "LaTeX development environment";
+      };
+      lean4 = {
+        path = ./dev-templates/lean4;
+        description = "Lean 4 development environment";
+      };
+      nickel = {
+        path = ./dev-templates/nickel;
+        description = "Nickel development environment";
+      };
+      nim = {
+        path = ./dev-templates/nim;
+        description = "Nim development environment";
+      };
+      nix = {
+        path = ./dev-templates/nix;
+        description = "Nix development environment";
+      };
+      node = {
+        path = ./dev-templates/node;
+        description = "Node.js development environment";
+      };
+      ocaml = {
+        path = ./dev-templates/ocaml;
+        description = "OCaml development environment";
+      };
+      opa = {
+        path = ./dev-templates/opa;
+        description = "Open Policy Agent development environment";
+      };
+      php = {
+        path = ./dev-templates/php;
+        description = "PHP development environment";
+      };
+      platformio = {
+        path = ./dev-templates/platformio;
+        description = "PlatformIO development environment";
+      };
+      protobuf = {
+        path = ./dev-templates/protobuf;
+        description = "Protobuf development environment";
+      };
+      pulumi = {
+        path = ./dev-templates/pulumi;
+        description = "Pulumi development environment";
+      };
+      purescript = {
+        path = ./dev-templates/purescript;
+        description = "Purescript development environment";
+      };
+      python = {
+       path = ./dev-templates/python;
+       description = "Python development environment";
+      };
+      r = {
+        path = ./dev-templates/r;
+        description = "R development environment";
+      };
+      ruby = {
+        path = ./dev-templates/ruby;
+        description = "Ruby development environment";
+      };
+      rust = {
+        path = ./dev-templates/rust;
+        description = "Rust development environment";
+      };
+      rust-toolchain = {
+        path = ./dev-templates/rust-toolchain;
+        description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
+      };
+      scala = {
+        path = ./dev-templates/scala;
+        description = "Scala development environment";
+      };
+      shell = {
+        path = ./dev-templates/shell;
+        description = "Shell script development environment";
+      };
+      swi-prolog = {
+        path = ./dev-templates/swi-prolog;
+        description = "Swi-prolog development environment";
+      };
+      swift = {
+        path = ./dev-templates/swift;
+        description = "Swift development environment";
+      };
+      vlang = {
+        path = ./dev-templates/vlang;
+        description = "Vlang developent environment";
+      };
+      zig = {
+        path = ./dev-templates/zig;
+        description = "Zig development environment";
+      };
+
+      # Aliases
+      c = c-cpp;
+      cpp = c-cpp;
+      rt = rust-toolchain;
     };
   };
 }

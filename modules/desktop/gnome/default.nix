@@ -13,11 +13,11 @@
     #libinput = { touchpad.tapping = true; };
   };
   services.gnome.gnome-initial-setup.enable = false;
-  services.gnome.games.enable = false;
+  services.gnome.games.enable = true;
 
   environment.gnome.excludePackages = with pkgs.gnome; [
-    gnome-backgrounds
-    pkgs.gnome-video-effects
+    #gnome-backgrounds
+    #pkgs.gnome-video-effects
     gnome-maps
     gnome-music
     pkgs.gnome-tour
@@ -31,7 +31,6 @@
     gnomeExtensions.compact-top-bar
     gnomeExtensions.custom-accent-colors
     gradience
-    glibc
     gnomeExtensions.gtile
     gnomeExtensions.dash-to-panel
     gnomeExtensions.tray-icons-reloaded
