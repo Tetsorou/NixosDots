@@ -218,6 +218,7 @@ in {
     # Development
     devbox # faster nix-shells
     xorg.xev
+    anydesk
     solaar
     shellify # faster nix-shells
     frescobaldi
@@ -237,6 +238,7 @@ in {
     waybar-mpris
     xorg.xhost
     firefox-devedition
+    wget
     ];
 
   # Some programs need SUID wrappers, can be configured further or are

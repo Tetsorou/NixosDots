@@ -66,7 +66,7 @@
         plugins = [
           # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
           # inputs.hyprland-plugins.packages.${pkgs.system}.hyprwinwrap
-          #inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+          inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
         ];
         systemd = {
           enable = true;
@@ -135,9 +135,11 @@
             repeat_delay = 300; # or 212
             repeat_rate = 30;
 
+
             follow_mouse = 1;
 
-            touchpad = {natural_scroll = false;};
+            touchpad = {natural_scroll = false;
+            disable_while_typing = false;};
 
             sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
             force_no_accel = true;
@@ -238,8 +240,8 @@
           windowrulev2 = [
             #"noanim, class:^(Rofi)$
             "tile,title:(.*)(Godot)(.*)$"
-            "workspace 1, class:^(kitty)$"
-            "workspace 1, class:^(Alacritty)$"
+            # "workspace 1, class:^(kitty)$"
+            #"workspace 1, class:^(Alacritty)$"
             "workspace 3, class:^(VSCodium)$"
             "workspace 3, class:^(codium-url-handler)$"
             "workspace 3, class:^(Code)$"
@@ -247,7 +249,7 @@
             "workspace 3, class:^(krita)$"
             "workspace 3, title:(.*)(Godot)(.*)$"
             "workspace 3, title:(GNU Image Manipulation Program)(.*)$"
-            "workspace 7, class:^(steam)$"
+            #"workspace 7, class:^(steam)$"
             "workspace 2, class:^(firefox)$"
             
 
@@ -343,7 +345,7 @@
               "ALT, return, fullscreen" # toggle the window on focus to fullscreen
               #"$mainMod ALT, L, exec, hyprlock" # lock screen
               "$mainMod, backspace, exec, wlogout -b 4" # logout menu
-              "$CONTROL, ESCAPE, exec, killall waybar || waybar" # toggle waybar
+              "$CONTROL, ESCAPE, exec, pkill .waybar-wrapped || waybar" # toggle waybar
 
               #"$mainMod, Return, exec, $term"
               "$mainMod, T, exec, $term"
@@ -477,8 +479,8 @@
             #pass_mouse_when_bound=0
           }
 
-          monitor=HDMI-A-1,highres,-1920x0,1
-          monitor=eDP-1,1920x1080@165, 0x0, 1
+          monitor=HDMI-A-1,highres,0x0,1
+          monitor=eDP-1,1920x1080@165,-1920x0,1
           # Easily plug in any monitor
           monitor=,preferred,auto,1
 

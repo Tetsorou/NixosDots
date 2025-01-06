@@ -224,9 +224,11 @@ in {
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  fonts.packages = with pkgs.nerd-fonts; [
-    jetbrains-mono
-    fira-code
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    jigmo
+    ipaexfont
   ];
 
   nixpkgs = {
@@ -284,7 +286,12 @@ in {
 
     # Development
     arduino-ide
+    anydesk
+    gtk3
+    rar
+    zip
     
+    xarchiver
     #brave
     
     #solaar
@@ -296,7 +303,7 @@ in {
     #gleam
     #erlang
     #rebar3
-    rictydiminished-with-firacode
+    kiwix    
     davinci-resolve
     anki
     ghidra
@@ -318,15 +325,26 @@ in {
     brightnessctl
     hyfetch
     discord
+    torrential
     #libclang
     #m2libc
     #nodejs_22
     #go
-    
+    # smartmontools
+    # parted
+    # udevil
+    # samba
+    # cifs-utils
+    # mergerfs
+     docker
+     bluez
     #aseprite
     #audacity
-    #wpsoffice
+    wpsoffice
+    realvnc-vnc-viewer
     #alejandra
+    wget
+    steamcmd
   ];
   # swapDevices = [{
     # device = "/swapfile";

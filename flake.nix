@@ -35,7 +35,7 @@
     # User configuration
     username = "tetsorou"; # WARNING REPLACE THIS WITH YOUR USERNAME IF MANUALLY INSTALLING
     terminal = "alacritty"; # alacritty or kitty
-    wallpaper = "cyberpunk.png"; # see modules/themes/wallpapers
+    wallpaper = "hug.png"; # see modules/themes/wallpapers
 
     # System configuration
     hostname = "nixos"; # CHOOSE A HOSTNAME HERE (default is fine)
