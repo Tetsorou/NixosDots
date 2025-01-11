@@ -3,6 +3,7 @@
   lib,
   pkgs,
   terminal,
+  split-monitor-workspaces,
   ...
 }: {
   imports = [
@@ -66,7 +67,7 @@
         plugins = [
           # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
           # inputs.hyprland-plugins.packages.${pkgs.system}.hyprwinwrap
-          #inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+          #split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
         ];
         systemd = {
           enable = true;

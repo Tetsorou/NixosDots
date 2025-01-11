@@ -106,7 +106,7 @@ in {
     loader = {
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
-      timeout = null; # Display bootloader indefinitely until user selects OS
+      timeout = 0; # Display bootloader indefinitely until user selects OS
       grub = {
         enable = true;
         device = "nodev";
@@ -267,10 +267,7 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Scripts
-    #scripts.tmux-sessionizer
     scripts.collect-garbage
-    #scripts.driverinfo
-    scripts.underwatt
     firefox-devedition
     # System
     winetricks
@@ -325,7 +322,7 @@ in {
     brightnessctl
     hyfetch
     discord
-    torrential
+    #torrential
     #libclang
     #m2libc
     #nodejs_22
@@ -341,10 +338,11 @@ in {
     #aseprite
     #audacity
     wpsoffice
-    realvnc-vnc-viewer
+    #realvnc-vnc-viewer
     #alejandra
     wget
-    steamcmd
+    #steamcmd
+    #7zip
   ];
   # swapDevices = [{
     # device = "/swapfile";
@@ -359,7 +357,8 @@ in {
   };
 
   # List services that you want to enable:
-
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   # Enable the OpenSSH daemon.
   /*
      services.openssh = {
