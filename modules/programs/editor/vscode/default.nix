@@ -55,7 +55,7 @@
           "editor.fontSize" = 14;
           "workbench.colorTheme" = "Catppuccin Mocha";
           "workbench.iconTheme" = "catppuccin-mocha";
-          "catppuccin.accentColor" = "lavender";
+          "catppuccin.accentColor" = "peach";
           "vsicons.dontShowNewVersionMessage" = true;
           "explorer.confirmDragAndDrop" = false;
           "editor.fontLigatures" = true;

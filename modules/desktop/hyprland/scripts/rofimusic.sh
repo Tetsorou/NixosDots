@@ -45,7 +45,7 @@ main() {
   
   # Check if the link is a playlist
   if [[ $link == *playlist* ]]; then
-    mpv --shuffle --vid=no "$link"
+    mpv --shuffle --vid=yes "$link"
   else
     mpv "$link"
   fi

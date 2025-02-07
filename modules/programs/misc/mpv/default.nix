@@ -119,7 +119,7 @@
           screenshot-webp-lossless = true;
           screenshot-directory = "${config.home.homeDirectory}/Pictures/Screenshots/mpv";
           screenshot-sw = true;
-          cache-dir = "${config.xdg.cacheHome}/mpv";
+          #cache-dir = "${config.xdg.cacheHome}/mpv";
           input-default-bindings = false;
         };
       };

@@ -107,7 +107,7 @@
   };
   services.displayManager.defaultSession = "hyprland";
   console.keyMap = "us"; # Configure console keymap
-  services.printing.enable = true; # Enable CUPS to print documents.
+  services.printing.enable = false; # Enable CUPS to print documents.
 
   users.users.${username} = {
     isNormalUser = true;

@@ -160,7 +160,7 @@
             rounding = 10;
             dim_special = 0.3;
             blur = {
-              enabled = true;
+              enabled = false;
               special = true;
               size = 6;
               passes = 3;
@@ -252,6 +252,7 @@
             "workspace 3, title:(GNU Image Manipulation Program)(.*)$"
             #"workspace 7, class:^(steam)$"
             "workspace 2, class:^(firefox)$"
+            "workspace 20, class:^(librewolf)$"
             
 
             "opacity 0.80 0.80,class:^(alacritty)$"
@@ -386,8 +387,8 @@
               # ",xf86AudioPrev,exec,$hyprScriptsDir/MediaCtrl.sh --prv" # go to previous media
 
               # to switch between windows in a floating workspace
-              "SUPER,Tab,cyclenext"
-              "SUPER,Tab,bringactivetotop"
+              #"SUPER,Tab,cyclenext"
+              #"SUPER,Tab,bringactivetotop"
 
               # Switch workspaces relative to the active workspace with mainMod + CTRL + [←→]
               "$mainMod CTRL, right, workspace, r+1"
@@ -475,13 +476,13 @@
           # }
 
           binds {
-            workspace_back_and_forth = 1
+            #workspace_back_and_forth = 1
             #allow_workspace_cycles=1
             #pass_mouse_when_bound=0
           }
 
-          monitor=HDMI-A-1,highres,0x0,1
-          monitor=eDP-1,1920x1080@165,-1920x0,1
+          monitor=HDMI-A-1,highres,-1920x0,1
+          monitor=eDP-1,1920x1080@165,0x0,1
           # Easily plug in any monitor
           monitor=,preferred,auto,1
 

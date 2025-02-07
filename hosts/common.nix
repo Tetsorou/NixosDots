@@ -202,7 +202,7 @@ in {
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -289,7 +289,8 @@ in {
     zip
     
     xarchiver
-    #brave
+    librewolf
+    ytmdesktop
     
     #solaar
     #frescobaldi
@@ -343,6 +344,9 @@ in {
     wget
     #steamcmd
     #7zip
+    rustup
+    rustlings
+    xkb-switch
   ];
   # swapDevices = [{
     # device = "/swapfile";
@@ -350,6 +354,7 @@ in {
   # }];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
+  services.flatpak.enable = true;
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;

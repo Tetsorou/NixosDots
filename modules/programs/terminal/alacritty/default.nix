@@ -99,26 +99,26 @@
               # key = "F";
               # mods = "Control";
             # }
-            {
-              chars = "tmux-sessionizer\r";
-              key = "T";
-              mods = "Control";
-            }
-            {
-              action = "Paste";
-              key = "Y";
-              mods = "Control";
-            }
-            {
-              action = "Copy";
-              key = "W";
-              mods = "Alt";
-            }
-            {
-              action = "SpawnNewInstance";
-              key = "Return";
-              mods = "Super|Shift";
-            }
+           # {
+           #   chars = "tmux-sessionizer\r";
+           #   key = "T";
+           #   mods = "Control";
+           # }
+            # {
+              # action = "Paste";
+              # key = "Y";
+              # mods = "Control";
+            # }
+            # {
+              # action = "Copy";
+              # key = "W";
+              # mods = "Alt";
+            # }
+            #{
+            #  action = "SpawnNewInstance";
+            #  key = "Return";
+            #  mods = "Super|Shift";
+            #}
           ];
 
           selection = {
