@@ -346,12 +346,15 @@ in {
     #7zip
     rustup
     rustlings
-    xkb-switch
+    zap
+    burpsuite
+    firefox
+    pulseaudioFull
   ];
-  # swapDevices = [{
-    # device = "/swapfile";
-    # size = 16 * 1024; # 16GB
-  # }];
+   swapDevices = [{
+     device = "/swapfile";
+     size = 16 * 1024; # 16GB
+   }];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   services.flatpak.enable = true;

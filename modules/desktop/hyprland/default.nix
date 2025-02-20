@@ -251,7 +251,7 @@
             "workspace 3, title:(.*)(Godot)(.*)$"
             "workspace 3, title:(GNU Image Manipulation Program)(.*)$"
             #"workspace 7, class:^(steam)$"
-            "workspace 2, class:^(firefox)$"
+            #"workspace 2, class:^(firefox)$"
             "workspace 20, class:^(librewolf)$"
             
 
@@ -259,7 +259,7 @@
             "opacity 1.00 1.00,class:^(firefox)$"
             "opacity 0.90 0.90,class:^(Brave-browser)$"
             "opacity 0.80 0.80,class:^(Steam)$"
-            "opacity 0.80 0.80,class:^(steam)$"
+            "opacity 0.95 0.95,class:^(YouTube Music Desktop App)$"
             "opacity 0.80 0.80,class:^(steamwebhelper)$"
             "opacity 0.80 0.80,class:^(Spotify)$"
             "opacity 0.80 0.80,title:(.*)(Spotify)(.*)$"
@@ -280,7 +280,7 @@
             "opacity 0.80 0.80,class:^(hu.kramo.Cartridges)$" #Cartridges-Gtk
             "opacity 0.80 0.80,class:^(com.obsproject.Studio)$" #Obs-Qt
             "opacity 0.80 0.80,class:^(gnome-boxes)$" #Boxes-Gtk
-            "opacity 0.80 0.80,class:^(discord)$" #Discord-Electron
+           # "opacity 0.80 0.80,class:^(discord)$" #Discord-Electron
             "opacity 0.80 0.80,class:^(WebCord)$" #WebCord-Electron
             "opacity 0.80 0.80,class:^(app.drey.Warp)$" #Warp-Gtk
             "opacity 0.80 0.80,class:^(net.davidotek.pupgui2)$" #ProtonUp-Qt
@@ -344,7 +344,7 @@
               #"$mainMod, delete, exit" # kill hyperland session
               "$mainMod, W, togglefloating" # toggle the window on focus to float
               "$mainMod SHIFT, G, togglegroup" # toggle the window on focus to float
-              "ALT, return, fullscreen" # toggle the window on focus to fullscreen
+              "$mainMod, return, fullscreen" # toggle the window on focus to fullscreen
               #"$mainMod ALT, L, exec, hyprlock" # lock screen
               "$mainMod, backspace, exec, wlogout -b 4" # logout menu
               "$CONTROL, ESCAPE, exec, pkill .waybar-wrapped || waybar" # toggle waybar
@@ -357,6 +357,7 @@
               "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # system monitor
 
               "$mainMod, A, exec, pkill -x rofi || $launcher" # launch desktop applications
+              "$ALT, L, exec, pkill -x rofi || $launcher" # launch desktop applications
               "$mainMod, Z, exec, pkill -x rofi || $hyprScriptsDir/emoji.sh" # launch emoji picker
               #"$mainMod, tab, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh w" # switch between desktop applications
               # "$mainMod, R, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh f" # browse system files
@@ -503,12 +504,12 @@
           # workspace=9,monitor:HDMI-A-1
           # workspace=10,monitor:DP-1
 
-        workspace=6,monitor:eDP-1,default:true
-        workspace=7,monitor:eDP-1,default:true
+        workspace=6,monitor:eDP-1
+        workspace=7,monitor:eDP-1
         workspace=8,monitor:eDP-1
         workspace=9,monitor:eDP-1
         workspace=10,monitor:eDP-1
-	      workspace=1,monitor:HDMI-A-1
+	      workspace=1,monitor:HDMI-A-1,default:true
         workspace=2,monitor:HDMI-A-1
         workspace=3,monitor:HDMI-A-1
         workspace=4,monitor:HDMI-A-1
