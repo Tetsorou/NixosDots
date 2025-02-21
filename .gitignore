@@ -2,6 +2,7 @@
 target
 result
 result-*
+modules/certs/cert
 
 [Bb]ackup
 [Bb]ackup/*

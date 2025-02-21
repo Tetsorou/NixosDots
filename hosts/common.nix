@@ -33,6 +33,7 @@ in {
     ../modules/programs/misc/mpv
     ../modules/programs/misc/spicetify
     ../modules/programs/misc/obs
+    ../modules/certs
   ];
 
   users.users.${username} = {
@@ -171,6 +172,19 @@ in {
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
+
+  programs.proxychains = {
+  enable = true;
+  chain.type = "dynamic";
+  proxies = {
+    myproxy = {
+      enable = true;
+      type = "http";
+      host = "127.0.0.1";
+      port = 8080;
+    };
+  };
+};
 
   # Enable sddm login manager
   services.displayManager = {
@@ -349,7 +363,8 @@ in {
     zap
     burpsuite
     firefox
-    pulseaudioFull
+    openssl
+    #pulseaudioFull
   ];
    swapDevices = [{
      device = "/swapfile";
@@ -386,6 +401,8 @@ in {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  
+
 
   nix = {
     # Nix Package Manager Settings
