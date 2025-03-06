@@ -365,6 +365,9 @@ in {
     firefox
     openssl
     #pulseaudioFull
+    metasploit
+    ffuf
+    
   ];
    swapDevices = [{
      device = "/swapfile";
@@ -383,7 +386,7 @@ in {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   # Enable the OpenSSH daemon.
-  /*
+  
      services.openssh = {
     enable = true;
     settings = {
@@ -394,7 +397,7 @@ in {
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
-  */
+  
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

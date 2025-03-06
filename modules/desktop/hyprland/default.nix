@@ -357,8 +357,8 @@
               "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # system monitor
 
               "$mainMod, A, exec, pkill -x rofi || $launcher" # launch desktop applications
-              "$mainMod, Z, exec, pkill -x rofi || $hyprScriptsDir/emoji.sh" # launch emoji picker
-              #"$mainMod, tab, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh w" # switch between desktop applications
+              "ALT, L, exec, pkill -x rofi || $launcher" # launch emoji picker
+              "ALT, tab, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh w" # switch between desktop applications
               # "$mainMod, R, exec, pkill -x rofi || $hyprScriptsDir/rofilaunch.sh f" # browse system files
               #"$mainMod ALT, K, exec, $hyprScriptsDir/keyboardswitch.sh" # change keyboard layout
               "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
@@ -437,10 +437,10 @@
               "$mainMod SHIFT $CONTROL, down, movewindow, d"
 
               # Move active window around current workspace with mainMod + SHIFT + CTRL [HLJK]
-              "$mainMod SHIFT $CONTROL, H, movewindow, l"
-              "$mainMod SHIFT $CONTROL, L, movewindow, r"
-              "$mainMod SHIFT $CONTROL, K, movewindow, u"
-              "$mainMod SHIFT $CONTROL, J, movewindow, d"
+              "ALT SHIFT $CONTROL, H, movewindow, l"
+              "ALT SHIFT $CONTROL, L, movewindow, r"
+              "ALT SHIFT $CONTROL, K, movewindow, u"
+              "ALT SHIFT $CONTROL, J, movewindow, d"
 
               # Special workspaces (scratchpad)
               "$mainMod CTRL, S, movetoworkspacesilent, special"
@@ -458,6 +458,7 @@
                 "$mainMod CTRL, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
               ])
               10));
+              
           bindm = [
             # Move/Resize windows with mainMod + LMB/RMB and dragging
             "$mainMod, mouse:272, movewindow"

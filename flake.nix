@@ -1,6 +1,6 @@
 {
   description = "A simple flake for an atomic system";
-
+ 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -22,6 +22,7 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
     };
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
