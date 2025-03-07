@@ -87,6 +87,7 @@ in {
       unzip
       light
       steghide
+      
       (pkgs.writeShellScriptBin "hello" ''
         echo "Hello ${username}!"
       '')
@@ -311,10 +312,6 @@ in {
     acpi
     wlroots
     #ventoy
-    #strawberry
-    #gleam
-    #erlang
-    #rebar3
     kiwix    
     davinci-resolve
     anki
@@ -326,22 +323,15 @@ in {
     appimage-run
     jetbrains-toolbox
     exercism
-    #ani-cli
     sl
     gnome-keyring
-    #piper
     jdk21
     libratbag
-    #cmake
-    #gcc
     brightnessctl
     hyfetch
     discord
-    #torrential
     #libclang
     #m2libc
-    #nodejs_22
-    #go
     # smartmontools
     # parted
     # udevil
@@ -353,10 +343,9 @@ in {
     #aseprite
     #audacity
     wpsoffice
-    #realvnc-vnc-viewer
-    #alejandra
+  
     wget
-    #steamcmd
+  
     #7zip
     rustup
     rustlings
@@ -367,6 +356,7 @@ in {
     #pulseaudioFull
     metasploit
     ffuf
+    wakatime-cli
     
   ];
    swapDevices = [{
