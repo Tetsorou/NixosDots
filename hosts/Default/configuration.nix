@@ -13,7 +13,7 @@
 
     #../../modules/hardware/drives
     ./hardware-configuration.nix
-    ../../modules/programs/editor/vscode
+    #../../modules/programs/editor/vscode
   ];
 
   # Home-manager config

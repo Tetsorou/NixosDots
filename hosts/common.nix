@@ -357,6 +357,7 @@ in {
     metasploit
     ffuf
     wakatime-cli
+    vscode
     
   ];
    swapDevices = [{
