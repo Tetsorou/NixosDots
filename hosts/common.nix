@@ -358,7 +358,7 @@ in {
     ffuf
     wakatime-cli
     vscode
-    
+    obsidian
   ];
    swapDevices = [{
      device = "/swapfile";
