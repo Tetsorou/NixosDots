@@ -117,6 +117,7 @@
             #"gsettings set org.gnome.desktop.wm.preferences button-layout :"
             "hyprpaper"
             "sleep 1 && waybar"
+            # "wakapi"
             "swaync"
             "pamixer --set-volume 50"
             # "dunst"
@@ -131,6 +132,8 @@
             #"systemctl start --user polkit-kde-authentication-agent-1"
           ];
           input = {
+
+            kb_options = "caps:none,grp:shift_caps_switch,compose:prsc";
             kb_layout = "us";
             kb_variant = "";
             repeat_delay = 300; # or 212
@@ -156,11 +159,11 @@
             # allow_tearing = true; # Allow tearing for games (use immediate window rules for specific games or all titles)
           };
           decoration = {
-            shadow.enabled = false;
+            shadow.enabled = true;
             rounding = 10;
             dim_special = 0.3;
             blur = {
-              enabled = false;
+              enabled = true;
               special = true;
               size = 6;
               passes = 3;
@@ -255,7 +258,7 @@
             "workspace 20, class:^(librewolf)$"
             
 
-            "opacity 0.80 0.80,class:^(alacritty)$"
+            "opacity 1.00 1.00,class:^(Alacritty)$"
             "opacity 1.00 1.00,class:^(firefox)$"
             "opacity 0.90 0.90,class:^(Brave-browser)$"
             "opacity 0.80 0.80,class:^(Steam)$"
@@ -324,10 +327,12 @@
             "$mainMod SHIFT, j, resizeactive, 0 30"
 
             # Functional keybinds
-            ",XF86MonBrightnessDown,exec,light -U 20"
-            ",XF86MonBrightnessUp,exec,light -A 20"
+            ",XF86MonBrightnessDown,exec,brightnessctl set 20-"
+            ",XF86MonBrightnessUp,exec,brightnessctl set +20"
             ",XF86AudioLowerVolume,exec,pamixer -d 2"
             ",XF86AudioRaiseVolume,exec,pamixer -i 2"
+            ",XF86Clear,exec,bluetoothctl connect CC:41:25:62:FD:80 | bluetoothctl disconnect CC:41:25:62:FD:80"
+        
           ];
           bind =
             [
@@ -446,6 +451,7 @@
               "$mainMod CTRL, S, movetoworkspacesilent, special"
               "$mainMod ALT, S, movetoworkspacesilent, special"
               "$mainMod, S, togglespecialworkspace,"
+              ",XF86Calculator , togglespecialworkspace,"
             ]
             ++ (builtins.concatLists (builtins.genList (x: let
                 ws = let

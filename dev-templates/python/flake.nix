@@ -18,7 +18,9 @@
             (with pkgs.python311Packages; [
               pip
               venvShellHook
+              tkinter
             ]);
+             #(python310.withPackages (ps: with ps; [ pandas tkinter ]))
         };
       });
     };

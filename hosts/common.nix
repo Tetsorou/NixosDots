@@ -70,7 +70,7 @@ in {
     home.packages = with pkgs; [
       # Applications
       #kate
-      xfce.thunar
+      
 
       # Terminal
       eza
@@ -230,6 +230,17 @@ in {
     wireplumber.enable = true;
   };
 
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+  thunar-archive-plugin
+  thunar-volman
+];
+
+
+
+services.tumbler.enable = true; # Thumbnail support for images
+
   services.xserver.enable = true; # Enable the X11 windowing system.
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -298,13 +309,13 @@ in {
 
     # Development
     arduino-ide
-    anydesk
+    #anydesk
     gtk3
     rar
     zip
     
     xarchiver
-    librewolf
+   # librewolf
     ytmdesktop
     
     #solaar
@@ -359,6 +370,14 @@ in {
     wakatime-cli
     vscode
     obsidian
+    bat
+    # oracle-instantclient
+    sqlite
+    sqlite-jdbc
+    lunarvim
+    wakapi
+    python311Full
+    blender
   ];
    swapDevices = [{
      device = "/swapfile";
