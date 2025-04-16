@@ -98,6 +98,58 @@
         "type": "github"
       }
     },
+    "fht-compositor": {
+      "inputs": {
+        "fht-share-picker": "fht-share-picker",
+        "flake-parts": "flake-parts",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": []
+      },
+      "locked": {
+        "lastModified": 1744735270,
+        "narHash": "sha256-tDGBPeZwyQ/ix6tYeZx20g9qXqCLmpfTJoaPJ6dWIJc=",
+        "owner": "nferhat",
+        "repo": "fht-compositor",
+        "rev": "4266a61a80d15dba5afe3511db228bc4818ba129",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nferhat",
+        "repo": "fht-compositor",
+        "type": "github"
+      }
+    },
+    "fht-share-picker": {
+      "inputs": {
+        "flake-parts": [
+          "fht-compositor",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "fht-compositor",
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "fht-compositor"
+        ]
+      },
+      "locked": {
+        "lastModified": 1735832883,
+        "narHash": "sha256-JX6btqPN6FA/nGYh0W9VnWePwWI3fZTlPLRXF2mALMA=",
+        "owner": "nferhat",
+        "repo": "fht-share-picker",
+        "rev": "999ca73503c4e86cd22876a9a7e2eb2e04c65c67",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nferhat",
+        "ref": "gtk-rewrite",
+        "repo": "fht-share-picker",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -146,6 +198,27 @@
     },
     "flake-parts": {
       "inputs": {
+        "nixpkgs-lib": [
+          "fht-compositor",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733312601,
+        "narHash": "sha256-4pDvzqnegAfRkPwO3wmwBhVi/Sye1mzps0zHWYnP88c=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "205b12d8b7cd4802fbcb8e8ef6a0f1408781a4f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
@@ -162,7 +235,7 @@
         "type": "github"
       }
     },
-    "flake-parts_2": {
+    "flake-parts_3": {
       "inputs": {
         "nixpkgs-lib": [
           "nixvim",
@@ -184,7 +257,7 @@
         "type": "github"
       }
     },
-    "flake-parts_3": {
+    "flake-parts_4": {
       "inputs": {
         "nixpkgs-lib": [
           "nur",
@@ -777,7 +850,7 @@
     },
     "nixvim": {
       "inputs": {
-        "flake-parts": "flake-parts",
+        "flake-parts": "flake-parts_2",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -801,7 +874,7 @@
       "inputs": {
         "devshell": "devshell",
         "flake-compat": "flake-compat_2",
-        "flake-parts": "flake-parts_2",
+        "flake-parts": "flake-parts_3",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager_3",
         "nix-darwin": "nix-darwin",
@@ -825,7 +898,7 @@
     },
     "nur": {
       "inputs": {
-        "flake-parts": "flake-parts_3",
+        "flake-parts": "flake-parts_4",
         "nixpkgs": "nixpkgs_5",
         "treefmt-nix": "treefmt-nix_2"
       },
@@ -894,6 +967,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "fht-compositor": "fht-compositor",
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_3",
