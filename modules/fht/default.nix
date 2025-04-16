@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{inputs, pkgs, ... }:
 
 {
   imports = [inputs.fht-compositor.homeModules.default];
