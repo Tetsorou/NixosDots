@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [inputs.fht-compositor.homeModules.default];
@@ -9,7 +9,7 @@
     enable = true;
     settings = {
       # Include cursor configuration from home environment
-      cursor = {inherit (config.home.pointerCursor) name size;};
+     
 
       # I mean, its really up to you...
       # You can also just do `builtins.fromTOML` if you have an existing config
