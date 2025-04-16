@@ -16,6 +16,7 @@
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.fht-compositor.nixosModules.default
 
     ../modules/programs/terminal/${terminal}
     ../modules/programs/shell/bash
@@ -34,6 +35,7 @@ in {
     ../modules/programs/misc/spicetify
     ../modules/programs/misc/obs
     ../modules/certs
+    ../modules/libgbm
   ];
 
   users.users.${username} = {
@@ -158,7 +160,9 @@ in {
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+    xdgOpenUsePortal = true;
+    config.common.default = ["gtk"];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   # Enable dconf for home-manager
@@ -173,7 +177,10 @@ in {
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
-
+  programs.fht-compositor = {
+    enable = true;
+    withUWSM = true;
+  };
   programs.proxychains = {
   enable = true;
   chain.type = "dynamic";
@@ -197,6 +204,7 @@ in {
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
   };
+  
 
   # Setup auth agent and keyring
   services.gnome.gnome-keyring.enable = true;
@@ -229,6 +237,7 @@ in {
     pulse.enable = true;
     wireplumber.enable = true;
   };
+  
 
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
@@ -378,6 +387,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     wakapi
     python311Full
     blender
+    
   ];
    swapDevices = [{
      device = "/swapfile";

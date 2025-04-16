@@ -23,6 +23,18 @@
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
     };
     agenix.url = "github:ryantm/agenix"; 
+
+    fht-compositor = {
+      url = "github:nferhat/fht-compositor";
+      inputs.nixpkgs.follows = "nixpkgs";
+
+      # If you make use of flake-parts yourself, override here
+      # inputs.flake-parts.follows = "flake-parts";
+
+      # Disable rust-overlay since it's only meant to be here for the devShell provided
+      # (IE. only for developement purposes, end users don't care)
+      inputs.rust-overlay.follows = "";
+    };
   };
 
   outputs = {
@@ -61,7 +73,7 @@
     system = "x86_64-linux"; # most users will be on 64 bit pcs (unless yours is ancient)
     lib = nixpkgs.lib;
     pkgs-stable = _final: _prev: {
-      stable = import nixpkgs-stable {
+      stable = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         config.nvidia.acceptLicense = true;
