@@ -16,7 +16,7 @@
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    inputs.fht-compositor.nixosModules.default
+   
 
     ../modules/programs/terminal/${terminal}
     ../modules/programs/shell/bash
@@ -177,10 +177,7 @@ in {
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
-  programs.fht-compositor = {
-    enable = true;
-    withUWSM = true;
-  };
+  
   programs.proxychains = {
   enable = true;
   chain.type = "dynamic";
@@ -387,6 +384,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     wakapi
     python311Full
     blender
+    SDL2
     
   ];
    swapDevices = [{

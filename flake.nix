@@ -24,17 +24,8 @@
     };
     agenix.url = "github:ryantm/agenix"; 
 
-    fht-compositor = {
-      url = "github:nferhat/fht-compositor";
-      inputs.nixpkgs.follows = "nixpkgs";
-
-      # If you make use of flake-parts yourself, override here
-      # inputs.flake-parts.follows = "flake-parts";
-
-      # Disable rust-overlay since it's only meant to be here for the devShell provided
-      # (IE. only for developement purposes, end users don't care)
-      inputs.rust-overlay.follows = "";
-    };
+   
+    
   };
 
   outputs = {
