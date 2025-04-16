@@ -3,6 +3,7 @@
  
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOs/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nur.url = "github:nix-community/NUR";
     nixvim = {
@@ -23,7 +24,17 @@
       inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
     };
     agenix.url = "github:ryantm/agenix"; 
+    fht-compositor = {
+      url = "github:nferhat/fht-compositor";
+      inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
 
+      # If you make use of flake-parts yourself, override here
+      # inputs.flake-parts.follows = "flake-parts";
+
+      # Disable rust-overlay since it's only meant to be here for the devShell provided
+      # (IE. only for developement purposes, end users don't care)
+      inputs.rust-overlay.follows = "";
+    };
    
     
   };

@@ -16,7 +16,7 @@
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-   
+    inputs.fht-compositor.nixosModules.default
 
     ../modules/programs/terminal/${terminal}
     ../modules/programs/shell/bash
@@ -34,7 +34,8 @@ in {
     ../modules/programs/misc/mpv
     ../modules/programs/misc/spicetify
     ../modules/programs/misc/obs
-    ../modules/certs
+    #../modules/certs
+    ../modules/fht
   ];
 
   users.users.${username} = {
@@ -189,6 +190,24 @@ in {
     };
   };
 };
+
+
+
+
+
+#### Experimental AREA ####
+
+programs.fht-compositor.enable = true;
+programs.fht-compositor.withUWSM = true;
+
+
+
+#### Experimental AREA ####
+
+
+
+
+
 
   # Enable sddm login manager
   services.displayManager = {
@@ -384,7 +403,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     python311Full
     blender
     SDL2
-    
+    swaybg
   ];
    swapDevices = [{
      device = "/swapfile";
