@@ -32,9 +32,9 @@ in {
     ../modules/programs/cli/cava
     ../modules/programs/cli/btop
     ../modules/programs/misc/mpv
-    ../modules/programs/misc/spicetify
+    #../modules/programs/misc/spicetify
     ../modules/programs/misc/obs
-    ../modules/certs
+    #../modules/certs
   ];
 
   users.users.${username} = {
@@ -51,6 +51,9 @@ in {
     ];
   };
 
+ services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.desktopManager.xterm.enable = false;
+
   # Common home-manager options that are shared between all systems.
   home-manager.users.${username} = {pkgs, ...}: {
     # Let Home Manager install and manage itself.
@@ -62,9 +65,9 @@ in {
     home.homeDirectory = "/home/${username}";
     home.stateVersion = "23.11"; # Please read the comment before changing.
     home.sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "code";
       BROWSER = "firefox-devedition";
-      TERMINAL = terminal;
+      TERMINAL = "alacritty";
     };
 
     # Packages that don't require configuration. If you're looking to configure a program see the /modules dir
@@ -88,7 +91,7 @@ in {
       unzip
       light
       steghide
-      
+       yt-dlp
       (pkgs.writeShellScriptBin "hello" ''
         echo "Hello ${username}!"
       '')
@@ -109,14 +112,15 @@ in {
     loader = {
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
-      timeout = 0; # Display bootloader indefinitely until user selects OS
+      timeout = 10; # Display bootloader indefinitely until user selects OS
       grub = {
         enable = true;
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
-        gfxmodeEfi = "2715x1527"; # for 4k: 3840x2160
-        gfxmodeBios = "2715x1527"; # for 4k: 3840x2160
+        gfxmodeEfi = "1920x1080"; # for 4k: 3840x2160
+        gfxmodeBios = "1920x1080"; # for 4k
+        extraEntriesBeforeNixOS = true;
         theme = pkgs.stdenv.mkDerivation {
           pname = "distro-grub-themes";
           version = "3.1";
@@ -196,7 +200,7 @@ in {
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "astronaut";
+      theme = "tokyo-night";
       settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
   };
@@ -308,7 +312,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     jq
     libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
     vulkan-tools
-    sddm-themes.astronaut
+    sddm-themes.tokyo-night
     # sddm-themes.sugar-dark
     # sddm-themes.tokyo-night
 
@@ -321,7 +325,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     
     xarchiver
    # librewolf
-    ytmdesktop
+   # ytmdesktop
     
     #solaar
     #frescobaldi
@@ -382,13 +386,15 @@ services.tumbler.enable = true; # Thumbnail support for images
     lunarvim
     wakapi
     python311Full
-    blender
+    #blender
     SDL2
+   fooyin
     
   ];
+
    swapDevices = [{
      device = "/swapfile";
-     size = 16 * 1024; # 16GB
+     size = 64 * 1024; # 16GB
    }];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -420,7 +426,7 @@ services.tumbler.enable = true; # Thumbnail support for images
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
   
 
 

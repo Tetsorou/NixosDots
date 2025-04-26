@@ -8,21 +8,10 @@ iDIR="$HOME/.config/hypr/icons"
 
 # Define menu options as an associative array
 declare -A menu_options=(
-  ["Korean Drama OST 📻🎶"]="https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ"
-  ["Pop 📻🎶"]="https://youtube.com/playlist?list=PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj"
-  ["Classics UK 🎻🎶"]="https://stream3.hippynet.co.uk:8008/stream.mp3"
-  ["Kiss UK ☕️🎶"]="https://live-kiss.sharp-stream.com/kissnational.mp3?aw_0_1st.skey=1709633813"
-  ["Dance 📻🎶"]="https://dancewave.online:443/dance.mp3"
-  ["Lofi Radio ☕️🎶"]="https://play.streamafrica.net/lofiradio"
-  ["96.3 Easy Rock 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
-  ["Rock 📻🎶"]="https://www.youtube.com/playlist?list=PL6Lt9p1lIRZ311J9ZHuzkR5A3xesae2pk"
-  ["Ghibli Music 🎻🎶"]="https://youtube.com/playlist?list=PLNi74S754EXbrzw-IzVhpeAaMISNrzfUy&si=rqnXCZU5xoFhxfOl"
-  ["Top Youtube Music 2023 ☕️🎶"]="https://youtube.com/playlist?list=PLDIoUOhQQPlXr63I_vwF9GD8sAKh77dWU&si=y7qNeEVFNgA-XxKy"
-  ["Chillhop ☕️🎶"]="https://stream.zeno.fm/fyn8eh3h5f8uv"
-  ["SmoothChill ☕️🎶"]="https://media-ssl.musicradio.com/SmoothChill"
-  ["Smooth UK ☕️🎶"]="https://icecast.thisisdax.com/SmoothUKMP3"
-  ["Relaxing Music ☕️🎶"]="https://youtube.com/playlist?list=PLMIbmfP_9vb8BCxRoraJpoo4q1yMFg4CE"
-  ["Youtube Remix 📻🎶"]="https://youtube.com/playlist?list=PLeqTkIUlrZXlSNn3tcXAa-zbo95j0iN-0"
+  ["Mafumafu instrumentals"]="https://www.youtube.com/playlist?list=PLCnIFNC6ZVTPfiIUryykErt6rGLJGWXe_"
+  ["Recap 2025 dec - feb"]="https://youtube.com/playlist?list=LRSRzrgs6Du9PfQ71-tDg44ATaBwh5bW7Mk11&si=azo7tymXi7KTuvTZ"
+  ["Amy Carty Radio"]="https://www.youtube.com/watch?v=4YEypDiRyS4&list=RD4YEypDiRyS4&start_radio=1"
+  
 )
 
 # Function for displaying notifications
@@ -45,7 +34,7 @@ main() {
   
   # Check if the link is a playlist
   if [[ $link == *playlist* ]]; then
-    mpv --shuffle --vid=yes "$link"
+    mpv --shuffle --no-video "$link"
   else
     mpv "$link"
   fi

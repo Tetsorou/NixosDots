@@ -16,7 +16,7 @@
         themeFile = "Catppuccin-Mocha";
         settings = {
           # shell = "${getExe pkgs.tmux}";
-          term = "xterm-256color";
+          term = "alacritty";
           strip_trailing_spaces = "smart";
           macos_option_as_alt = "yes";
           macos_quit_when_last_window_closed = true;

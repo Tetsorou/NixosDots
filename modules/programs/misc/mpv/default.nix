@@ -10,6 +10,7 @@
         scripts = with pkgs.mpvScripts; [
           thumbnail
           mpris
+          
         ];
         bindings = rec {
           MBTN_LEFT_DBL = "cycle fullscreen";
@@ -103,6 +104,7 @@
           # T = "script-binding generate-thumbnails";
         };
         config = {
+         
           osc = "no";
           watch-later-directory = "${config.xdg.stateHome}/mpv/watch_later";
           resume-playback-check-mtime = true;
