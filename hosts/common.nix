@@ -314,11 +314,11 @@ services.tumbler.enable = true; # Thumbnail support for images
     killall
     lm_sensors
     jq
-    #libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
+    libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
     vulkan-tools
     
     # sddm-themes.sugar-dark
-    # sddm-themes.tokyo-night
+    #sddm-themes.astronaut
 
     # Development
     arduino-ide
