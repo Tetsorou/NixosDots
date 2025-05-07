@@ -4,7 +4,7 @@
   config,
   ...
 }: let
-  nvidiaDriverChannel = config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
+  nvidiaDriverChannel = config.boot.kernelPackages.nvidiaPackages.stable; # stable, latest, beta, etc.
 in {
   environment.sessionVariables = lib.optionalAttrs config.programs.hyprland.enable {
     NVD_BACKEND = "direct";
@@ -26,7 +26,7 @@ in {
     nvidia = {
       open = false;
       # nvidiaPersistenced = true;
-      nvidiaSettings = false;
+      nvidiaSettings = true;
       powerManagement.enable = false; # This can cause sleep/suspend to fail.
       modesetting.enable = true;
       package = nvidiaDriverChannel;

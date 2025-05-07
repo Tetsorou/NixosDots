@@ -34,6 +34,8 @@ in {
     ../modules/programs/misc/mpv
     #../modules/programs/misc/spicetify
     ../modules/programs/misc/obs
+    ../modules/programs/misc/nix-ld
+    ../modules/programs/misc/virt-manager
     #../modules/certs
   ];
 
@@ -237,6 +239,7 @@ in {
     pulse.enable = true;
     wireplumber.enable = true;
   };
+
   
 
   programs.thunar.enable = true;
@@ -305,14 +308,15 @@ services.tumbler.enable = true; # Thumbnail support for images
     scripts.collect-garbage
     firefox-devedition
     # System
+    sddm-themes.tokyo-night
     winetricks
     wineWowPackages.full
     killall
     lm_sensors
     jq
-    libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
+    #libsForQt5.qt5.qtgraphicaleffects # For sddm to function properly
     vulkan-tools
-    sddm-themes.tokyo-night
+    
     # sddm-themes.sugar-dark
     # sddm-themes.tokyo-night
 
@@ -346,7 +350,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     sl
     gnome-keyring
     jdk21
-    libratbag
+    # libratbag
     brightnessctl
     hyfetch
     discord
@@ -360,7 +364,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     # mergerfs
      docker
      bluez
-    #aseprite
+    aseprite
     #audacity
     wpsoffice
   
@@ -383,15 +387,26 @@ services.tumbler.enable = true; # Thumbnail support for images
     # oracle-instantclient
     sqlite
     sqlite-jdbc
-    lunarvim
-    wakapi
+    # lunarvim
+    # wakapi
     python311Full
     #blender
     SDL2
    fooyin
-    
+  #  distrobox
+   quickemu
+  #  toolbox
+  openvpn
+  # virt-manager
+  navidrome
+  #nheko
+  eog
+  gnumake
+  clang_19
+  libGLU
+  
   ];
-
+  #services.openvpn.enable = true;
    swapDevices = [{
      device = "/swapfile";
      size = 64 * 1024; # 16GB

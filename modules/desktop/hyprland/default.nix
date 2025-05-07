@@ -297,6 +297,7 @@
             "opacity 0.80 0.70,class:^(nm-connection-editor)$"
             "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
 
+            "float,title:^(4MB-game-jam)$"
             "float,class:^(qt5ct)$"
             "float,class:^(nwg-look)$"
             "float,class:^(org.kde.ark)$"
@@ -331,7 +332,7 @@
             ",XF86MonBrightnessUp,exec,brightnessctl set +20"
             ",XF86AudioLowerVolume,exec,pamixer -d 2"
             ",XF86AudioRaiseVolume,exec,pamixer -i 2"
-            ",XF86Clear,exec,bluetoothctl connect CC:41:25:62:FD:80 | bluetoothctl disconnect CC:41:25:62:FD:80"
+            # ",XF86Clear,exec,bluetoothctl connect CC:41:25:62:FD:80 | bluetoothctl disconnect CC:41:25:62:FD:80"
         
           ];
           bind =

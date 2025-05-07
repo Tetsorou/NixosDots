@@ -13,6 +13,7 @@
 
   # virtualisation
   virtualisation = {
+    podman.enable = true;
     libvirtd = {
       enable = true;
       qemu = {
