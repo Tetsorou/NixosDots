@@ -901,7 +901,8 @@
         "nixvim": "nixvim",
         "nur": "nur",
         "spicetify-nix": "spicetify-nix",
-        "split-monitor-workspaces": "split-monitor-workspaces"
+        "split-monitor-workspaces": "split-monitor-workspaces",
+        "zen-browser": "zen-browser"
       }
     },
     "spicetify-nix": {
@@ -1072,6 +1073,26 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1747110127,
+        "narHash": "sha256-FieNNacI4JOS49ndBYJyo03PiDmrr4kxCSrNwj3E8o4=",
+        "owner": "maximoffua",
+        "repo": "zen-browser.nix",
+        "rev": "be8e88bbc4966194c3706d47f504bd0c99f10402",
+        "type": "github"
+      },
+      "original": {
+        "owner": "maximoffua",
+        "repo": "zen-browser.nix",
         "type": "github"
       }
     }

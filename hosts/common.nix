@@ -21,7 +21,7 @@ in {
     ../modules/programs/terminal/${terminal}
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
-    #../modules/programs/browser/firefox
+    ../modules/programs/browser/zen
     ../modules/programs/editor/nixvim
     #../modules/programs/editor/vscode
     ../modules/programs/cli/starship
@@ -404,7 +404,9 @@ services.tumbler.enable = true; # Thumbnail support for images
   gnumake
   clang_19
   libGLU
-  
+  audacity
+  linuxKernel.packages.linux_zen.perf
+  koreader
   ];
   #services.openvpn.enable = true;
    swapDevices = [{

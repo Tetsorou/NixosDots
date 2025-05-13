@@ -298,6 +298,8 @@
             "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
 
             "float,title:^(4MB-game-jam)$"
+            "size 400 180,floating:1,title:^(4MB-game-jam)$"
+
             "float,class:^(qt5ct)$"
             "float,class:^(nwg-look)$"
             "float,class:^(org.kde.ark)$"
