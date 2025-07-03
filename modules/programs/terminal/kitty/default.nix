@@ -15,8 +15,8 @@
         };
         themeFile = "Catppuccin-Mocha";
         settings = {
-          # shell = "${getExe pkgs.tmux}";
-          term = "alacritty";
+          shell = "${getExe pkgs.tmux}";
+          term = "kitty";
           strip_trailing_spaces = "smart";
           macos_option_as_alt = "yes";
           macos_quit_when_last_window_closed = true;

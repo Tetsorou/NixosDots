@@ -18,7 +18,8 @@ in {
     inputs.home-manager.nixosModules.home-manager
    
 
-    ../modules/programs/terminal/${terminal}
+    ../modules/programs/terminal/kitty
+    ../modules/programs/terminal/alacritty
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
     ../modules/programs/browser/zen
@@ -68,7 +69,7 @@ in {
     home.stateVersion = "23.11"; # Please read the comment before changing.
     home.sessionVariables = {
       EDITOR = "code";
-      BROWSER = "firefox-devedition";
+      BROWSER = "zen";
       TERMINAL = "alacritty";
     };
 
@@ -169,6 +170,17 @@ in {
     config.common.default = ["gtk"];
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+  services.auto-cpufreq.enable = true;
+services.auto-cpufreq.settings = {
+  battery = {
+     governor = "powersave";
+     turbo = "never";
+  };
+  charger = {
+     governor = "performance";
+     turbo = "auto";
+  };
+};
 
   # Enable dconf for home-manager
   programs.dconf.enable = true;
@@ -340,6 +352,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     davinci-resolve
     anki
     ghidra
+    # wayvnc
     devbox # faster nix-shells
     shellify # faster nix-shells
     godot_4
@@ -407,6 +420,13 @@ services.tumbler.enable = true; # Thumbnail support for images
   audacity
   linuxKernel.packages.linux_zen.perf
   koreader
+  zoxide
+  uutils-coreutils
+  xh
+  hyperfine
+  espanso-wayland
+  pureref
+  fastfetch
   ];
   #services.openvpn.enable = true;
    swapDevices = [{

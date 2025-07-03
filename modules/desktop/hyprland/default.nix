@@ -351,6 +351,7 @@
               #"ALT, F4, exec, $hyprScriptsDir/dontkillsteam.sh" # killactive, kill the window on focus
               #"$mainMod, delete, exit" # kill hyperland session
               "$mainMod, W, togglefloating" # toggle the window on focus to float
+              "ALT, H, togglefloating" # toggle the window on focus to float
               "$mainMod SHIFT, G, togglegroup" # toggle the window on focus to float
               "$mainMod, return, fullscreen" # toggle the window on focus to fullscreen
               #"$mainMod ALT, L, exec, hyprlock" # lock screen
@@ -373,6 +374,7 @@
               #"$mainMod SHIFT, Q, exec, swaync-client -t -sw" # swayNC panel
              # "$mainMod, G, exec, $hyprScriptsDir/gamelauncher.sh" # game launcher
               #"$mainMod ALT, G, exec, $hyprScriptsDir/gamemode.sh" # disable hypr effects for gamemode
+              "ALT, V, exec, $hyprScriptsDir/ClipManager.sh" # Clipboard Manager
               "$mainMod, V, exec, $hyprScriptsDir/ClipManager.sh" # Clipboard Manager
               "$mainMod, M, exec, pkill -x rofi || $hyprScriptsDir/rofimusic.sh" # online music
               "$mainMod SHIFT, M, exec, pkill -x rofi || $hyprScriptsDir/rofimusic.sh" # online music
@@ -381,7 +383,7 @@
               "$mainMod, P, exec, $hyprScriptsDir/screenshot.sh s" # drag to snip an area / click on a window to print it
               "$mainMod CTRL, P, exec, $hyprScriptsDir/screenshot.sh sf" # frozen screen, drag to snip an area / click on a window to print it
               "$mainMod, print, exec, $hyprScriptsDir/screenshot.sh m" # print focused monitor
-              "$mainMod ALT, P, exec, $hyprScriptsDir/screenshot.sh p" # print all monitor outputs
+              # "$mainMod ALT, P, exec, $hyprScriptsDir/screenshot.sh p" # print all monitor outputs
 
               # Functional keybinds
               ",xf86Sleep, exec, systemctl suspend" # Put computer into sleep mode
@@ -410,22 +412,22 @@
               "$mainMod, right, movefocus, r"
               "$mainMod, up, movefocus, u"
               "$mainMod, down, movefocus, d"
-              "ALT, Tab, movefocus, d"
+              # "ALT, Tab, movefocus, d"
 
-              # Move focus with mainMod + HJKL keys
-              "$mainMod, h, movefocus, l"
-              "$mainMod, l, movefocus, r"
-              "$mainMod, k, movefocus, u"
-              "$mainMod, j, movefocus, d"
+              # # Move focus with mainMod + HJKL keys
+              # "$mainMod, h, movefocus, l"
+              # "$mainMod, l, movefocus, r"
+              # "$mainMod, k, movefocus, u"
+              # "$mainMod, j, movefocus, d"
 
-              # Go to workspace 5 (FireFox) and 6 (Spotify) with mouse side buttons
-              "$mainMod, mouse:276, workspace, 5"
-              "$mainMod, mouse:275, workspace, 6"
-              #!!MOUSE BUTTONS
-              "$mainMod SHIFT, mouse:276, movetoworkspace, 5"
-              "$mainMod SHIFT, mouse:275, movetoworkspace, 6"
-              "$mainMod CTRL, mouse:276, movetoworkspacesilent, 5"
-              "$mainMod CTRL, mouse:275, movetoworkspacesilent, 6"
+              # # Go to workspace 5 (FireFox) and 6 (Spotify) with mouse side buttons
+              # "$mainMod, mouse:276, workspace, 5"
+              # "$mainMod, mouse:275, workspace, 6"
+              # #!!MOUSE BUTTONS
+              # "$mainMod SHIFT, mouse:276, movetoworkspace, 5"
+              # "$mainMod SHIFT, mouse:275, movetoworkspace, 6"
+              # "$mainMod CTRL, mouse:276, movetoworkspacesilent, 5"
+              # "$mainMod CTRL, mouse:275, movetoworkspacesilent, 6"
 
               # Rebuild NixOS with a KeyBind
               "$mainMod CTRL ALT, R, exec, kitty --class \"kitty-rebuildScript\" $hyprScriptsDir/rebuild.sh"
@@ -470,6 +472,7 @@
               
           bindm = [
             # Move/Resize windows with mainMod + LMB/RMB and dragging
+            "$mainMod, mouse:272, movewindow"
             "$mainMod, mouse:272, movewindow"
             "$mainMod, mouse:273, resizewindow"
           ];
