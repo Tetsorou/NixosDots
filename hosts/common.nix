@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   lib,
+  nixpkgs,
   pkgs-stable,
   username,
   terminal,
@@ -38,6 +39,8 @@ in {
     ../modules/programs/misc/nix-ld
     ../modules/programs/misc/virt-manager
     #../modules/certs
+    ../modules/programs/programming/flutter
+
   ];
 
   users.users.${username} = {
@@ -432,6 +435,9 @@ services.tumbler.enable = true; # Thumbnail support for images
   fastfetch
   poetry #copernicus
   libepoxy #copernicus
+
+  android-studio
+
   ];
   #services.openvpn.enable = true;
    swapDevices = [{

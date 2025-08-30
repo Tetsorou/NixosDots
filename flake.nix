@@ -73,6 +73,7 @@
         config.nvidia.acceptLicense = true;
       };
     };
+    
   in {
     nixosConfigurations = {
       Default = lib.nixosSystem {

@@ -41,5 +41,5 @@ icon_override="configuration {icon-theme: \"${icon_override}\";}"
 
 # launch rofi
 
-rofi -show $r_mode -theme $XDG_CONFIG_HOME/rofi/launchers/type-1/style-2.rasi 
+rofi -show $r_mode -theme $XDG_CONFIG_HOME/rofi/launchers/type-4/style-2.rasi 
 
