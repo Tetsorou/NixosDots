@@ -139,7 +139,6 @@
             repeat_delay = 300; # or 212
             repeat_rate = 30;
 
-
             follow_mouse = 1;
 
             touchpad = {natural_scroll = false;
@@ -149,9 +148,9 @@
             force_no_accel = true;
           };
           general = {
-            gaps_in = 4;
-            gaps_out = 4;
-            border_size = 2;
+            gaps_in = 2;
+            gaps_out = 0;
+            border_size = 1;
             "col.active_border" = "rgba(ca9ee6ff) rgba(f2d5cfff) 45deg";
             "col.inactive_border" = "rgba(b4befecc) rgba(6c7086cc) 45deg";
             resize_on_border = true;
@@ -160,7 +159,7 @@
           };
           decoration = {
             shadow.enabled = true;
-            rounding = 10;
+            rounding = 1;
             dim_special = 0.3;
             blur = {
               enabled = true;
@@ -208,7 +207,7 @@
             ];
             animation = [
               "windows, 1, 3, md3_decel, popin 60%"
-              "border, 1, 10, default"
+              "border, 0, 10, default"
               "fade, 1, 2.5, md3_decel"
               # "workspaces, 1, 3.5, md3_decel, slide"
               "workspaces, 1, 3.5, easeOutExpo, slide"
@@ -403,6 +402,10 @@
               # Switch workspaces relative to the active workspace with mainMod + CTRL + [←→]
               "$mainMod CTRL, right, workspace, r+1"
               "$mainMod CTRL, left, workspace, r-1"
+              # #!!MOUSE BUTTONS
+
+              "$mainMod, mouse:276, workspace, r+1"
+              "$mainMod, mouse:275, workspace, r-1"
 
               # move to the first empty workspace instantly with mainMod + CTRL + [↓]
               "$mainMod CTRL, down, workspace, empty"
@@ -421,9 +424,6 @@
               # "$mainMod, j, movefocus, d"
 
               # # Go to workspace 5 (FireFox) and 6 (Spotify) with mouse side buttons
-              # "$mainMod, mouse:276, workspace, 5"
-              # "$mainMod, mouse:275, workspace, 6"
-              # #!!MOUSE BUTTONS
               # "$mainMod SHIFT, mouse:276, movetoworkspace, 5"
               # "$mainMod SHIFT, mouse:275, movetoworkspace, 6"
               # "$mainMod CTRL, mouse:276, movetoworkspacesilent, 5"
@@ -436,21 +436,21 @@
               "$mainMod, mouse_down, workspace, e+1"
               "$mainMod, mouse_up, workspace, e-1"
 
-              # Move active window to a relative workspace with mainMod + CTRL + ALT + [←→]
-              "$mainMod CTRL ALT, right, movetoworkspace, r+1"
-              "$mainMod CTRL ALT, left, movetoworkspace, r-1"
+              # # Move active window to a relative workspace with mainMod + CTRL + ALT + [←→]
+              # "$mainMod CTRL ALT, right, movetoworkspace, r+1"
+              # "$mainMod CTRL ALT, left, movetoworkspace, r-1"
 
-              # Move active window around current workspace with mainMod + SHIFT + CTRL [←→↑↓]
-              "$mainMod SHIFT $CONTROL, left, movewindow, l"
-              "$mainMod SHIFT $CONTROL, right, movewindow, r"
-              "$mainMod SHIFT $CONTROL, up, movewindow, u"
-              "$mainMod SHIFT $CONTROL, down, movewindow, d"
+              # # Move active window around current workspace with mainMod + SHIFT + CTRL [←→↑↓]
+              # "$mainMod SHIFT $CONTROL, left, movewindow, l"
+              # "$mainMod SHIFT $CONTROL, right, movewindow, r"
+              # "$mainMod SHIFT $CONTROL, up, movewindow, u"
+              # "$mainMod SHIFT $CONTROL, down, movewindow, d"
 
-              # Move active window around current workspace with mainMod + SHIFT + CTRL [HLJK]
-              "ALT SHIFT $CONTROL, H, movewindow, l"
-              "ALT SHIFT $CONTROL, L, movewindow, r"
-              "ALT SHIFT $CONTROL, K, movewindow, u"
-              "ALT SHIFT $CONTROL, J, movewindow, d"
+              # # Move active window around current workspace with mainMod + SHIFT + CTRL [HLJK]
+              # "ALT SHIFT $CONTROL, H, movewindow, l"
+              # "ALT SHIFT $CONTROL, L, movewindow, r"
+              # "ALT SHIFT $CONTROL, K, movewindow, u"
+              # "ALT SHIFT $CONTROL, J, movewindow, d"
 
               # Special workspaces (scratchpad)
               "$mainMod CTRL, S, movetoworkspacesilent, special"
@@ -494,10 +494,11 @@
             #pass_mouse_when_bound=0
           }
 
-          monitor=HDMI-A-1,highres,-1920x0,1
-          monitor=eDP-1,1920x1080@165,0x0,1
+          monitor=HDMI-A-1,highres,0x0,1,transform,0
+          monitor=DP-1,1920x1080,-1080x0,1.666666,transform,0
+          monitor=eDP-1,1920x1080@165,1920x0,1
           # Easily plug in any monitor
-          monitor=,preferred,auto,1
+          monitor=,1280x960,auto,1.666666
 
 
           # 1080p-HDR monitor on the left, 4K-HDR monitor in the middle and 1080p vertical monitor on the right.
@@ -509,18 +510,18 @@
           # workspace=2,monitor:DP-1
           # workspace=3,monitor:DP-1
           # workspace=4,monitor:DP-1
-          # workspace=5,monitor:HDMI-A-2,default:true
-          # workspace=6,monitor:HDMI-A-2
-          # workspace=7,monitor:HDMI-A-2
+          # workspace=5,monitor:HDMI-A-1,default:true
+          # workspace=6,monitor:HDMI-A-1
+          # workspace=7,monitor:HDMI-A-1
           # workspace=8,monitor:HDMI-A-1,default:true
           # workspace=9,monitor:HDMI-A-1
           # workspace=10,monitor:DP-1
 
         workspace=6,monitor:HDMI-A-1
         workspace=7,monitor:HDMI-A-1
-        workspace=8,monitor:eDP-1
-        workspace=9,monitor:eDP-1
-        workspace=10,monitor:eDP-1
+        workspace=8,monitor:HDMI-A-1
+        workspace=9,monitor:HDMI-A-1
+        workspace=10,monitor:HDMI-A-1
 	      workspace=1,monitor:HDMI-A-1,default:true
         workspace=2,monitor:HDMI-A-1
         workspace=3,monitor:HDMI-A-1

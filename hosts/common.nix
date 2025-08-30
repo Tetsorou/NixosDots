@@ -51,6 +51,7 @@ in {
       "libvirtd"
       "video"
       "audio"
+      "dialout"
     ];
   };
 
@@ -174,7 +175,7 @@ in {
 services.auto-cpufreq.settings = {
   battery = {
      governor = "powersave";
-     turbo = "never";
+     turbo = "auto";
   };
   charger = {
      governor = "performance";
@@ -398,6 +399,7 @@ services.tumbler.enable = true; # Thumbnail support for images
     obsidian
     bat
     # oracle-instantclient
+    mysql84
     sqlite
     sqlite-jdbc
     # lunarvim
@@ -426,7 +428,10 @@ services.tumbler.enable = true; # Thumbnail support for images
   hyperfine
   espanso-wayland
   pureref
+  glib
   fastfetch
+  poetry #copernicus
+  libepoxy #copernicus
   ];
   #services.openvpn.enable = true;
    swapDevices = [{
