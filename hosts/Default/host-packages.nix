@@ -4,6 +4,7 @@
     obsidian
     protonvpn-gui # VPN
     github-desktop
+    gtkimageview
     # pokego # Overlayed
   ];
 }

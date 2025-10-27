@@ -20,7 +20,7 @@
         profiles = {
           default = {
             id = 0; # 0 is the default profile; see also option "isDefault"
-            name = "default"; # name as listed in about:profiles
+            name = "Default Profile"; # name as listed in about:profiles
             isDefault = true; # can be omitted; true if profile ID is 0
             settings = import ./settings.nix;
             bookmarks = import ./bookmarks.nix;

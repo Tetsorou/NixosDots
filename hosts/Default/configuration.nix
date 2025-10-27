@@ -26,7 +26,7 @@ in
     ../../modules/core/syncthing.nix
     ../../modules/core/system.nix
     ../../modules/core/users.nix
-    # ../../modules/core/flatpak.nix
+    ../../modules/core/flatpak.nix
     # ../../modules/core/virtualisation.nix
     # ../../modules/core/dlna.nix
 
@@ -41,6 +41,7 @@ in
     ../../modules/programs/cli/tmux
     ../../modules/programs/cli/direnv
     ../../modules/programs/cli/lazygit
+    ../../modules/programs/editor/vscode
     ../../modules/programs/cli/cava
     # ../../modules/programs/cli/fastfetch
     ../../modules/programs/cli/btop
@@ -48,7 +49,7 @@ in
     ../../modules/programs/media/spicetify
     # ../../modules/programs/media/youtube-music
     # ../../modules/programs/media/thunderbird
-    # ../../modules/programs/media/obs-studio
+    ../../modules/programs/media/obs-studio
     ../../modules/programs/media/mpv
     ../../modules/programs/misc/tlp
     ../../modules/programs/misc/thunar
