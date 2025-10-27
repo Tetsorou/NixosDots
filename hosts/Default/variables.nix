@@ -1,6 +1,6 @@
 {
   # User Configuration
-  username = "zer0"; # Your username (auto-set with install.sh, live-install.sh, rebuild)
+  username = "tetsorou"; # Your username (auto-set with install.sh, live-install.sh, rebuild)
   desktop = "hyprland"; # Options: hyprland, i3-gaps, gnome, plasma6
   terminal = "kitty"; # Options: kitty, alacritty
   editor = "nixvim"; # Options: nixvim, vscode, helix, doom-emacs, nvchad, neovim
@@ -18,9 +18,9 @@
 
   # Localization
   clock24h = true; # 24H or 12H clock in waybar
-  locale = "en_GB.UTF-8"; # System locale
-  timezone = "Europe/London"; # Your timezone
-  kbdLayout = "gb"; # Keyboard layout
-  kbdVariant = "extd"; # Keyboard variant (can be empty)
-  consoleKeymap = "uk"; # TTY keymap
+  locale = "en_US.UTF-8"; # System locale
+  timezone = "America/Mangagua"; # Your timezone
+  kbdLayout = "us"; # Keyboard layout
+  kbdVariant = ""; # Keyboard variant (can be empty)
+  consoleKeymap = "us"; # TTY keymap
 }

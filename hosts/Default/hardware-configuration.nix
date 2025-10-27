@@ -8,37 +8,33 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "uas" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/luks-root";
-      fsType = "btrfs";
+    { device = "/dev/disk/by-uuid/9ab44cd9-6d83-4cbd-b727-30bcebce66c0";
+      fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-root".device = "/dev/disk/by-uuid/cee67fb9-08c9-47d9-946a-0de3c15c5689";
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7F91-512D";
+    { device = "/dev/disk/by-uuid/80E9-9248";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/mapper/luks-home";
-      fsType = "btrfs";
-    };
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/829ac4fb-8739-46c5-abd3-1e4a38d1cd70"; }
+    ];
 
-  boot.initrd.luks.devices."luks-home".device = "/dev/disk/by-uuid/45cbaba1-6c60-4388-b7b6-bb8a5235e099";
-
-  fileSystems."/mnt/work" =
-    { device = "/dev/disk/by-uuid/f6f6d68c-68f8-4c50-8155-105a22b9ff35";
-      fsType = "ext4";
-    };
-
-  swapDevices = [ ];
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp57s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
