@@ -23,8 +23,8 @@
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
-        gfxmodeEfi = "2715x1527"; # for 4k: 3840x2160
-        gfxmodeBios = "2715x1527"; # for 4k: 3840x2160
+        gfxmodeEfi = "1920x1080"; # for 4k: 3840x2160
+        gfxmodeBios = "1920x1080"; # for 4k: 3840x2160
         theme = pkgs.stdenv.mkDerivation {
           pname = "distro-grub-themes";
           version = "3.1";

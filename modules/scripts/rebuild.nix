@@ -4,7 +4,10 @@ pkgs.writeShellScriptBin "rebuild" ''
   RED='\033[0;31m'
   GREEN='\033[0;32m'
   NC='\033[0m' # No Color
-
+  #OVERWRITING ZEN PROFILES
+  rm .zen/profiles.ini
+  cp .zen/profiles.ini.backup .zen/profiles.ini
+  #OVERWRITING ZEN PROFILES
   if [[ $EUID -eq 0 ]]; then
     echo "This script should not be executed as root! Exiting..."
     exit 1

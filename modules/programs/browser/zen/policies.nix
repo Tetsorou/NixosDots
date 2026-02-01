@@ -52,7 +52,7 @@
   ManualAppUpdateOnly = true;
   NoDefaultBookmarks = false;
   OfferToSaveLogins = false;
-  PasswordManagerEnabled = false;
+  PasswordManagerEnabled = true;
   PictureInPicture = {
     Enabled = true;
   };
@@ -65,7 +65,7 @@
       Value = false;
     };
   };
-  PromptForDownloadLocation = true;
+  PromptForDownloadLocation = false;
   SearchSuggestEnabled = false;
   ShowHomeButton = false;
   StartDownloadsInTempDirectory = false;

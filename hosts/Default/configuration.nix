@@ -31,7 +31,7 @@ in
     # ../../modules/core/dlna.nix
 
     # Optional
-    ../../modules/hardware/drives # Automatically mount extra external/internal drives
+    # ../../modules/hardware/drives # Automatically mount extra external/internal drives
     ../../modules/hardware/video/${vars.videoDriver}.nix # Enable gpu drivers defined in variables.nix
     ../../modules/desktop/${vars.desktop} # Set window manager defined in variables.nix
     ../../modules/programs/browser/${vars.browser} # Set browser defined in variables.nix
@@ -41,7 +41,7 @@ in
     ../../modules/programs/cli/tmux
     ../../modules/programs/cli/direnv
     ../../modules/programs/cli/lazygit
-    ../../modules/programs/editor/vscode
+    # ../../modules/programs/editor/vscode
     ../../modules/programs/cli/cava
     # ../../modules/programs/cli/fastfetch
     ../../modules/programs/cli/btop

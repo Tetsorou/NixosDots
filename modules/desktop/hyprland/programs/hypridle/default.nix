@@ -3,7 +3,7 @@
   home-manager.sharedModules = [
     (_: {
       services.hypridle = {
-        enable = true;
+        enable = false;
         settings = {
           general = {
             ignore_dbus_inhibit = false;
@@ -14,7 +14,7 @@
           };
           listener = [
             {
-              timeout = 300; # 5 Minutes
+              timeout = -1; # 5 Minutes
               on-timeout = "loginctl lock-session";
             }
             /*

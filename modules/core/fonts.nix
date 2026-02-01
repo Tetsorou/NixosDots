@@ -10,6 +10,8 @@
       # Normal Fonts
       noto-fonts
       noto-fonts-emoji
+
+      jigmo
     ];
     fontconfig = {
       enable = true;
@@ -18,6 +20,7 @@
         monospace = [
           "JetBrainsMono Nerd Font"
           "Maple Mono NF"
+          "jigmo"
           "Noto Mono"
           "DejaVu Sans Mono" # Default
         ];

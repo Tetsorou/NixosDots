@@ -155,8 +155,8 @@ in
                   #"[workspace 5 silent] ${browser}"
                   #"[workspace 6 silent] spotify"
                   #"[workspace special silent] ${browser} --private-window"
-                  #"[workspace special silent] ${terminal}"
-
+                  "[workspace special silent] ${terminal}"
+                  
                   "${lib.getExe wallpaper}"
                   "waybar"
                   "swaync"
@@ -173,6 +173,7 @@ in
               input = {
                 kb_layout = "${kbdLayout},ru";
                 kb_variant = "${kbdVariant},";
+                kb_options = "caps:none,grp:shift_caps_switch,compose:prsc";
                 repeat_delay = 275; # or 212
                 repeat_rate = 35;
                 numlock_by_default = true;
@@ -302,20 +303,20 @@ in
                 "opacity 0.90 0.80,class:^(Emacs)$"
                 "opacity 0.90 0.80,class:^(gcr-prompter)$" # keyring prompt
                 "opacity 0.90 0.80,title:^(Hyprland Polkit Agent)$" # polkit prompt
-                "opacity 0.90 0.80,class:^(obsidian)$"
+                "opacity 1.0 1.0,class:^(obsidian)$"
                 "opacity 0.90 0.80,class:^(Lutris|lutris|net.lutris.Lutris)$"
                 "opacity 0.80 0.70,class:^(kitty|alacritty|Alacritty|org.wezfurlong.wezterm)$"
                 "opacity 0.80 0.70,class:^(nvim-wrapper)$"
                 "opacity 0.80 0.70,class:^(gnome-disks)$"
-                "opacity 0.80 0.70,class:^(org.gnome.Nautilus|Thunar|thunar|pcmanfm)$"
-                "opacity 0.80 0.70,class:^(thunar-volman-settings)$"
+                "opacity 1.0 1.0,class:^(org.gnome.Nautilus|Thunar|thunar|pcmanfm)$"
+                "opacity 1.0 1.0,class:^(thunar-volman-settings)$"
                 "opacity 0.80 0.70,class:^(org.gnome.FileRoller)$"
                 "opacity 0.80 0.70,class:^(io.github.ilya_zlobintsev.LACT)$"
-                "opacity 0.80 0.70,class:^(Steam|steam|steamwebhelper)$"
+                "opacity 1.0 1.0,class:^(Steam|steam|steamwebhelper)$"
                 "opacity 0.80 0.70,class:^(Spotify|spotify)$"
                 "opacity 0.80 0.70,title:(.*)(Spotify)(.*)$"
                 "opacity 0.80 0.70,title:^(Kvantum Manager)$"
-                "opacity 0.80 0.70,class:^(VSCodium|codium-url-handler)$"
+                "opacity 1.0 1.0,class:^(VSCodium|codium-url-handler)$"
                 "opacity 0.80 0.70,class:^(code|code-url-handler)$"
                 "opacity 0.80 0.70,class:^(tuiFileManager)$"
                 "opacity 0.80 0.70,class:^(org.kde.dolphin)$"
@@ -324,7 +325,7 @@ in
                 "opacity 0.80 0.70,class:^(qt5ct|qt6ct)$"
                 "opacity 0.80 0.70,class:^(yad)$"
 
-                "opacity 0.90 0.80,class:^(discord)$" # Discord-Electron
+                "opacity 0.95 0.80,class:^(discord)$" # Discord-Electron
                 "opacity 0.90 0.80,class:^(WebCord)$" # WebCord-Electron
                 "opacity 0.90 0.80,class:^(com.github.rafostar.Clapper)$" # Clapper-Gtk
                 "opacity 0.80 0.70,class:^(com.github.tchx84.Flatseal)$" # Flatseal-Gtk
@@ -405,9 +406,9 @@ in
                 in
                 [
                   # Keybinds help menu
-                  "$mainMod, question, exec, ${./scripts/keybinds.sh}"
-                  "$mainMod, slash, exec, ${./scripts/keybinds.sh}"
-                  "$mainMod CTRL, K, exec, ${./scripts/keybinds.sh}"
+                  # "$mainMod, question, exec, ${./scripts/keybinds.sh}"
+                  # "$mainMod, slash, exec, ${./scripts/keybinds.sh}"
+                  # "$mainMod CTRL, K, exec, ${./scripts/keybinds.sh}"
 
                   "$mainMod, F8, exec, kill $(cat /tmp/auto-clicker.pid) 2>/dev/null || ${lib.getExe autoclicker} --cps 40"
                   # "$mainMod ALT, mouse:276, exec, kill $(cat /tmp/auto-clicker.pid) 2>/dev/null || ${lib.getExe autoclicker} --cps 60"
@@ -418,37 +419,37 @@ in
 
                   # Window/Session actions
                   "$mainMod, Q, exec, ${./scripts/dontkillsteam.sh}" # killactive, kill the window on focus
-                  "ALT, F4, exec, ${./scripts/dontkillsteam.sh}" # killactive, kill the window on focus
-                  "$mainMod, delete, exit" # kill hyperland session
+                  # "ALT, F4, exec, ${./scripts/dontkillsteam.sh}" # killactive, kill the window on focus
+                  # "$mainMod, delete, exit" # kill hyperland session
                   "$mainMod, W, togglefloating" # toggle the window on focus to float
                   "$mainMod SHIFT, G, togglegroup" # toggle the window on focus to float
-                  "ALT, return, fullscreen" # toggle the window on focus to fullscreen
-                  "$mainMod ALT, L, exec, hyprlock" # lock screen
+                  "$mainMod, return, fullscreen" # toggle the window on focus to fullscreen
+                  # "$mainMod ALT, L, exec, hyprlock" # lock screen
                   "$mainMod, backspace, exec, pkill -x wlogout || wlogout -b 4" # logout menu
                   "$CONTROL, ESCAPE, exec, pkill waybar || waybar" # toggle waybar
 
                   # Applications/Programs
-                  "$mainMod, Return, exec, $term"
+                  # "$mainMod, Return, exec, $term"
                   "$mainMod, T, exec, $term"
-                  "$mainMod, E, exec, $fileManager"
-                  "$mainMod, C, exec, $editor"
-                  "$mainMod, F, exec, $browser"
-                  "$mainMod SHIFT, S, exec, spotify"
-                  "$mainMod SHIFT, Y, exec, youtube-music"
-                  "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # System Monitor
+                  # "$mainMod, E, exec, $fileManager"
+                  # "$mainMod, C, exec, $editor"
+                  # "$mainMod, F, exec, $browser"
+                  # "$mainMod SHIFT, S, exec, spotify"
+                  # "$mainMod SHIFT, Y, exec, youtube-music"
+                  # "$CONTROL ALT, DELETE, exec, $term -e '${getExe pkgs.btop}'" # System Monitor
                   "$mainMod CTRL, C, exec, hyprpicker --autocopy --format=hex" # Colour Picker
 
                   "$mainMod, A, exec, launcher drun" # launch desktop applications
-                  "$mainMod, SPACE, exec, launcher drun" # launch desktop applications
+                  # "$mainMod, SPACE, exec, launcher drun" # launch desktop applications
                   "$mainMod SHIFT, W, exec, launcher wallpaper" # launch wallpaper switcher
-                  "$mainMod, Z, exec, launcher emoji" # launch emoji picker
-                  "$mainMod SHIFT, T, exec, launcher tmux" # launch tmux sessions
+                  # "$mainMod, Z, exec, launcher emoji" # launch emoji picker
+                  # "$mainMod SHIFT, T, exec, launcher tmux" # launch tmux sessions
                   "$mainMod, G, exec, launcher games" # game launcher
                   # "$mainMod, tab, exec, launcher window" # switch between desktop applications
                   # "$mainMod, R, exec, launcher file" # brrwse system files
-                  "$mainMod ALT, K, exec, ${./scripts/keyboardswitch.sh}" # change keyboard layout
+                  # "$mainMod ALT, K, exec, ${./scripts/keyboardswitch.sh}" # change keyboard layout
                   "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
-                  "$mainMod SHIFT, Q, exec, swaync-client -t -sw" # swayNC panel
+                  # "$mainMod SHIFT, Q, exec, swaync-client -t -sw" # swayNC panel
                   "$mainMod ALT, G, exec, ${./scripts/gamemode.sh}" # disable hypr effects for gamemode
                   "$mainMod, V, exec, ${./scripts/ClipManager.sh}" # Clipboard Manager
                   "$mainMod, M, exec, ${./scripts/rofimusic.sh}" # online music
@@ -569,23 +570,22 @@ in
                 ",preferred,auto,1"
 
                 # My Monitors (Fine to leave these since i used the serial numbers)
-                "desc:BNQ BenQ EW277HDR 99J01861SL0,preferred,-1920x0,1"
-                "desc:BNQ BenQ EL2870U PCK00489SL0,preferred,0x0,2"
-                "desc:BNQ BenQ xl2420t 99D06760SL0,preferred,1920x-420,1,transform,1" # 5 for fipped
+                "desc:JVC LT-MK24220,preferred,0x0,1"
+                "desc:Microstep MSI MP242L 1322131231233,preferred,1920x0,1" # 5 for fipped
               ];
 
               workspace = [
                 # Binds workspaces to my monitors (find desc with: hyprctl monitors)
-                "1,monitor:desc:BNQ BenQ EL2870U PCK00489SL0,default:true"
-                "2,monitor:desc:BNQ BenQ EL2870U PCK00489SL0"
-                "3,monitor:desc:BNQ BenQ EL2870U PCK00489SL0"
-                "4,monitor:desc:BNQ BenQ EL2870U PCK00489SL0"
-                "5,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0,default:true"
-                "6,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0"
-                "7,monitor:desc:BNQ BenQ EW277HDR 99J01861SL0"
-                "8,monitor:desc:BNQ BenQ xl2420t 99D06760SL0,default:true"
-                "9,monitor:desc:BNQ BenQ xl2420t 99D06760SL0"
-                "10,monitor:desc:BNQ BenQ EL2870U PCK00489SL0"
+                "1,monitor:desc:JVC LT-MK24220,default:true"
+                "2,monitor:desc:JVC LT-MK24220"
+                "3,monitor:desc:JVC LT-MK24220"
+                "4,monitor:desc:JVC LT-MK24220"
+                "5,monitor:desc:JVC LT-MK24220"
+                "6,monitor:desc:Microstep MSI MP242L 1322131231233,default:true"
+                "7,monitor:desc:Microstep MSI MP242L 1322131231233"
+                "8,monitor:desc:Microstep MSI MP242L 1322131231233"
+                "9,monitor:desc:Microstep MSI MP242L 1322131231233"
+                "10,monitor:desc:Microstep MSI MP242L 1322131231233"
               ];
             };
           };

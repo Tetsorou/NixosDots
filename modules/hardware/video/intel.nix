@@ -30,6 +30,7 @@
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
+      mesa
     ];
   };
 
