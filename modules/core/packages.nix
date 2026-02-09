@@ -4,7 +4,7 @@
   programs = {
     fuse.userAllowOther = true;
     mtr.enable = true;
-    adb.enable = true;
+    # adb.enable = true;
     hyprlock.enable = true;
     gnupg.agent = {
       enable = true;

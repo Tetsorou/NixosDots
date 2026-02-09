@@ -45,9 +45,12 @@
     android-studio
     zenity
     libreoffice
+    sunshine
+    moonlight-qt
   ];
   swapDevices = [{
      device = "/swapfile";
      size = 16 * 1024; # 16GB
    }];
+  #  services.dnsmasq.enable = true;
 }

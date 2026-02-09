@@ -9,8 +9,8 @@
     ];
   };
   # Archive manager
-  programs.file-roller = {
-    enable = true;
-    package = pkgs.file-roller;
-  };
+  # programs.file-roller = {
+  #   enable = true;
+  #   package = pkgs.file-roller;
+  # };
 }

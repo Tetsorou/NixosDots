@@ -19,7 +19,7 @@
   # Localization
   clock24h = true; # 24H or 12H clock in waybar
   locale = "en_US.UTF-8"; # System locale
-  timezone = "America/Mangagua"; # Your timezone
+  timezone = "America/Managua"; # Your timezone
   kbdLayout = "us"; # Keyboard layout
   kbdVariant = ""; # Keyboard variant (can be empty)
   consoleKeymap = "us"; # TTY keymap
