@@ -46,7 +46,7 @@
                     vcpkg
                     vcpkg-tool
                   ]
-                  ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
+                  ++ (if stdenv.hostPlatform.system == "aarch64-darwin" then [ ] else [ gdb ]);
               };
         }
       );

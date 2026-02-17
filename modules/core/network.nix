@@ -21,6 +21,7 @@ in
         59010 # Custom application port
         59011 # Custom application port
         8080 # Alternative HTTP/web server port
+        16262
       ];
       allowedUDPPorts = [
         59010 # Custom application port

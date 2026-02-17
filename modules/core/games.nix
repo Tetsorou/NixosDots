@@ -46,7 +46,7 @@
   home-manager.sharedModules = [
     (_: {
       programs.mangohud = {
-        enable = true;
+        enable = false;
         enableSessionWide = true;
         settingsPerApplication = {
           mpv = {

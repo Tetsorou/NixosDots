@@ -9,7 +9,7 @@ let
   };
 in
 {
-  "zen.view.use-single-toolbar" = false;
+  "zen.view.use-single-toolbar" = true;
   "zen.view.sidebar-expanded" = false;
 
   "zen.view.compact.hide-toolbar" = true;
@@ -28,6 +28,9 @@ in
   "privacy.userContext.enabled" = true;
   "privacy.userContext.ui.enabled" = true;
   "privacy.userContext.longPressBehavior" = 2;
+
+
+  "zen.window-sync.enabled" = false;
 
   # Smooth Scroll
   "general.smoothScroll" = true;
@@ -67,15 +70,15 @@ in
   "privacy.query_stripping.enabled.pbmode" = lock-true;
 
   # Clear on shutdown (Only locks the options to true. Manually enable in firefox settings)
-  "privacy.sanitize.sanitizeOnShutdown" = lock-true;
-  "privacy.clearOnShutdown.cache" = lock-true;
-  "privacy.clearOnShutdown.cookies" = lock-true;
-  "privacy.clearOnShutdown.downloads" = lock-true;
-  "privacy.clearOnShutdown.formdata" = lock-true;
-  "privacy.clearOnShutdown.history" = lock-true;
-  "privacy.clearOnShutdown.offlineApps" = lock-true;
-  "privacy.clearOnShutdown.sessions" = lock-true;
-  "privacy.clearOnShutdown.siteSettings" = lock-true;
+  # "privacy.sanitize.sanitizeOnShutdown" = lock-true;
+  # "privacy.clearOnShutdown.cache" = lock-true;
+  # "privacy.clearOnShutdown.cookies" = lock-true;
+  # "privacy.clearOnShutdown.downloads" = lock-true;
+  # "privacy.clearOnShutdown.formdata" = lock-true;
+  # "privacy.clearOnShutdown.history" = lock-true;
+  # "privacy.clearOnShutdown.offlineApps" = lock-true;
+  # "privacy.clearOnShutdown.sessions" = lock-true;
+  # "privacy.clearOnShutdown.siteSettings" = lock-true;
 
   # Block telemetry
   "toolkit.telemetry.enabled" = lock-false;

@@ -11,10 +11,10 @@
     ];
   };
   # Disable systemd dns resolver
-  services.resolved = {
+  services.resolved.settings.Resolve = {
     enable = false;
     domains = [ "~." ];
-    fallbackDns = [ ]; # Empty to prevent bypass
+    FallbackDNS= [ ]; # Empty to prevent bypass
     dnsovertls = "true";
 
     # github.com/systemd/systemd/issues/10579
