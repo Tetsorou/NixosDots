@@ -116,6 +116,10 @@
             screenshot-sw = true;
             # cache-dir = "${config.xdg.cacheHome}/mpv";
             input-default-bindings = false;
+            gpu-api="vulkan";           # or opengl, whichever you use
+            vo="gpu-next";              # Hyprland/Wayland GPU output
+            fbo-format="rgba8";         # force 8-bit framebuffer
+            hdr-compute-peak=false;      # disable HDR peak calculation
           };
         };
       }

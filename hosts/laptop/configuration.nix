@@ -23,7 +23,7 @@ in
     ../../modules/core/sddm.nix
     ../../modules/core/security.nix
     ../../modules/core/services.nix
-    ../../modules/core/syncthing.nix
+    # ../../modules/core/syncthing.nix
     ../../modules/core/system.nix
     ../../modules/core/users.nix
     ../../modules/core/flatpak.nix
@@ -46,12 +46,12 @@ in
     # ../../modules/programs/cli/fastfetch
     ../../modules/programs/cli/btop
     ../../modules/programs/media/discord
-    ../../modules/programs/media/spicetify
+    # ../../modules/programs/media/spicetify
     # ../../modules/programs/media/youtube-music
     # ../../modules/programs/media/thunderbird
-    ../../modules/programs/media/obs-studio
+    # ../../modules/programs/media/obs-studio
     ../../modules/programs/media/mpv
-    # ../../modules/programs/misc/tlp
+    ../../modules/programs/misc/tlp
     ../../modules/programs/misc/thunar
     ../../modules/programs/misc/lact # GPU fan, clock and power configuration
   ]

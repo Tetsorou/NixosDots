@@ -94,6 +94,7 @@
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
       nixosConfigurations = {
         Default = mkHost "Default";
+        laptop = mkHost "laptop";
       };
     };
 }

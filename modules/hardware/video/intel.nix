@@ -17,6 +17,7 @@
     "mem_sleep_default=deep" # Allow deepest sleep states
     "i915.enable_dc=2" # Display power saving
     "nvme.noacpi=1" # Helps with NVME power consumption
+    "drm.force_sdr=1"
   ];
 
   # Load the driver
@@ -27,10 +28,9 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      intel-vaapi-driver
+      intel-compute-runtime
       libva-vdpau-driver
       libvdpau-va-gl
-      mesa
     ];
   };
 

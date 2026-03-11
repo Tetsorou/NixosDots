@@ -257,7 +257,7 @@ in
                 ];
               };
               render = {
-                direct_scanout = 2; # 0 = off, 1 = on, 2 = auto (on with content type ‘game’)
+                direct_scanout = 0; # 0 = off, 1 = on, 2 = auto (on with content type ‘game’)
               };
               ecosystem = {
                 no_update_news = true;
@@ -267,9 +267,9 @@ in
                 disable_hyprland_logo = true;
                 mouse_move_focuses_monitor = true;
                 swallow_regex = "^(Alacritty|kitty)$";
-                enable_swallow = true;
-                vfr = true; # always keep on
-                vrr = 2; # enable variable refresh rate (0=off, 1=on, 2=fullscreen only, 3 = fullscreen games/media)
+                enable_swallow = false;
+                vfr = false; # always keep on
+                vrr = 0; # enable variable refresh rate (0=off, 1=on, 2=fullscreen only, 3 = fullscreen games/media)
               };
               xwayland.force_zero_scaling = false;
               gesture = [
@@ -346,19 +346,19 @@ in
                 "opacity 0.80 0.70,match:class ^(org.kde.polkit-kde-authentication-agent-1)$"
 
                 "content game, match:tag games"
-                "tag +games, match:content game"
-                "tag +games, match:class ^(steam_app.*|steam_app_\d+)$"
-                "tag +games, match:class ^(gamescope)$"
-                "tag +games, match:class (Waydroid)"
-                "tag +games, match:class (osu!)"
+                # "tag +games, match:content game"
+                # "tag +games, match:class ^(steam_app.*|steam_app_\d+)$"
+                # "tag +games, match:class ^(gamescope)$"
+                # "tag +games, match:class (Waydroid)"
+                # "tag +games, match:class (osu!)"
 
                 # Games
-                "sync_fullscreen on,match:tag games"
-                "fullscreen 1,match:tag games"
-                "border_size 0,match:tag games"
-                "no_shadow on,match:tag games"
-                "no_blur on,match:tag games"
-                "no_anim on,match:tag games"
+                # "sync_fullscreen on,match:tag games"
+                # "fullscreen 1,match:tag games"
+                # "border_size 0,match:tag games"
+                # "no_shadow on,match:tag games"
+                # "no_blur on,match:tag games"
+                # "no_anim on,match:tag games"
 
                 # Float and pin Picture-in-Picture in browsers
                 "float 1,match:title ^(Picture-in-Picture)$,match:class ^(zen|zen-beta|floorp|firefox)$"
@@ -441,7 +441,7 @@ in
 
                   "$mainMod, A, exec, launcher drun" # launch desktop applications
                   # "$mainMod, SPACE, exec, launcher drun" # launch desktop applications
-                  # "$mainMod SHIFT, W, exec, launcher wallpaper" # launch wallpaper switcher
+                  "$mainMod SHIFT, W, exec, launcher wallpaper" # launch wallpaper switcher
                   # "$mainMod, Z, exec, launcher emoji" # launch emoji picker
                   # "$mainMod SHIFT, T, exec, launcher tmux" # launch tmux sessions
                   "$mainMod, G, exec, launcher games" # game launcher
