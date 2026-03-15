@@ -15,6 +15,7 @@
       "preempt=full" # lower latency but less throughput
     ];
     loader = {
+      systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
       timeout = null; # Display bootloader indefinitely until user selects OS

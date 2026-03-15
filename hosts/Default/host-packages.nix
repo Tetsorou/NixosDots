@@ -54,21 +54,21 @@
    }];
   #  services.dnsmasq.enable = true;
 
-  services.samba = {
-    enable = true;
-    settings = {
-      "public" = {
-        "path" = "/public";
-        "read only" = "yes";
-        "browseable" = "yes";
-        "guest ok" = "yes";
-        "comment" = "Public samba share.";
-      };
-    };
-  };
+#  services.samba = {
+#    enable = true;
+#    settings = {
+#      "public" = {
+#        "path" = "/public";
+#        "read only" = "yes";
+#        "browseable" = "yes";
+#        "guest ok" = "yes";
+#        "comment" = "Public samba share.";
+#      };
+#    };
+ # };
 
   services.tailscale = {
-    enable = true;
+    enable = false;
     # Enable tailscale at startup
 
     # If you would like to use a preauthorized key
