@@ -10,7 +10,6 @@
     (_: {
       imports = [ inputs.zen-browser.homeModules.beta ];
       programs.zen-browser = {
-	suppressXdgMigrationWarning = true;
         enable = true;
         policies = import ./policies.nix { inherit lib; };
         languagePacks = [

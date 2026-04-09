@@ -6,7 +6,7 @@
     gtkimageview
     # pokego # Overlayed
     steghide
-    arduino-ide
+    # arduino-ide
     gtk3
     rar
     zip
@@ -68,7 +68,7 @@
  # };
 
   services.tailscale = {
-    enable = false;
+    enable = true;
     # Enable tailscale at startup
 
     # If you would like to use a preauthorized key

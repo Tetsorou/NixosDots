@@ -65,7 +65,7 @@
             '';
 
             finit = ''
-              nix flake init --template ${self}/dev-shells#$1
+              nix flake init -t ~/NixOS\#$1
               direnv allow
             '';
             cdown = ''

@@ -19,8 +19,10 @@ if [ $HYPRGAMEMODE = 1 ]; then
         keyword layerrule noanim,waybar ;\
         keyword layerrule noanim,swaync-notification-window ;\
         keyword layerrule noanim,swww-daemon ;\
-        keyword layerrule noanim,rofi"
-  hyprctl 'keyword windowrule opaque,class:(.*)' # ensure all windows are opaque
+        keyword layerrule noanim,rofi
+          "
+  hyprctl 'keyword windowrule opaque,match:class (.*)'
+  swww ~/NixOS/modules/themes/wallpapers/
   exit
 else
   hyprctl reload config-only -q

@@ -570,6 +570,7 @@ in
                 ",preferred,auto,1"
                 "desc:JVC LT-MK24220,preferred,0x0,1"
                 "desc:Microstep MSI MP242L 1322131231233,preferred,1920x0,1" # 5 for fipped
+                "desc:AOC 2070W AAGE79A045951,1600x900,960x-900,1" # 5 for fipped
               ];
 
               workspace = [
@@ -584,6 +585,11 @@ in
                 "8,monitor:desc:Microstep MSI MP242L 1322131231233"
                 "9,monitor:desc:Microstep MSI MP242L 1322131231233"
                 "10,monitor:desc:Microstep MSI MP242L 1322131231233"
+                "11,monitor:desc:AOC 2070W AAGE79A045951,default:true"
+                "12,monitor:desc:AOC 2070W AAGE79A045951"
+                "13,monitor:desc:AOC 2070W AAGE79A045951"
+                "14,monitor:desc:AOC 2070W AAGE79A045951"
+                
               ];
             };
           };
